@@ -1,0 +1,53 @@
+.card-newsletter {
+  background: linear-gradient(172.54deg, #128ae1 5.35%, #0941de 100.67%);
+  box-shadow: 0px 25.8192px 34.4257px rgba(0, 0, 0, 0.06);
+  border-radius: 5px;
+  padding: 35px 30px;
+  color: #fff;
+  position: relative;
+  margin-bottom: @800 30px;
+}
+
+.card-newsletter__tag {
+  background: #ffffff;
+  border-radius: 5px;
+  color: #117fe1;
+  padding: 7px 10px;
+  font-size: 15px;
+  line-height: 144%;
+  text-transform: uppercase;
+}
+
+.card-newsletter__text {
+  font-size: 17px @800 16px;
+  line-height: 120%;
+  margin-bottom: 20px;
+}
+
+.card-newsletter h2 {
+  color: #fff;
+  font-size: 27px @800 24px;
+  line-height: 120%;
+}
+
+.newsletter-card__input {
+  text-align: center;
+  font-size: 15px;
+  line-height: 18px;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 15px;
+  width: 100%;
+}
+
+.card-newsletter form > button.button {
+  width: 100%;
+  color: #0542de;
+  background: #fff;
+  padding: 15px;
+  margin-top: 10px;
+  padding-top: @800 18px;
+  padding-bottom: @800 18px;
+}

@@ -1,0 +1,101 @@
+.newsletter {
+  margin-y: 40px;
+}
+
+.newsletter__wrap {
+  position: relative;
+  display: grid;
+  grid-template-columns: 48% 1fr @1100 40% 1fr @1000 1fr;
+  grid-gap: 40px @1000 20px;
+  align-items: center;
+  border-radius: 6px @600 4px;
+  padding-y: 40px @500 0;
+  padding-x: 64px @800 32px @500 0;
+  background-color: #e6ecfc @500 transparent;
+}
+.newsletter.newsletter--modal .newsletter__wrap {
+  overflow: hidden;
+}
+
+.newsletter__title {
+  margin-y: 0;
+  font-weight: bold;
+  font-size: 22px @600 28px;
+  line-height: 1.27;
+  color: #1d40a1 @500 black;
+}
+.newsletter__title strong {
+  color: @600 $primary;
+}
+
+.newsletter__subtitle  {
+  margin-y: 4px 0 @600 8px 0;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 18px;
+  color: #1d40a1 @500 #737373;
+}
+
+.newsletter__wrap form {
+  display: flex;
+  flex-direction: @600 column;
+  align-items: stretch;
+}
+
+.newsletter__wrap form input:not(.newsletter__input) {
+  display: none;
+}
+
+.newsletter__form.newsletter__form--error {
+  animation: newsletterFormError 1200ms ease-in-out 0s 1 normal forwards;
+}
+
+@keyframes newsletterFormError {
+  10%,
+  90% {
+    transform: translate3d(-3px, 0, 0);
+  }
+
+  20%,
+  80% {
+    transform: translate3d(3px, 0, 0);
+  }
+
+  30%,
+  50%,
+  70% {
+    transform: translate3d(-5px, 0, 0);
+  }
+
+  40%,
+  60% {
+    transform: translate3d(5px, 0, 0);
+  }
+}
+
+.newsletter__input {
+  display: @600 block;
+  flex: 1;
+  height: auto @600 60px;
+  flex: @600 0 1 60px;
+  width: @600 100%;
+  padding-x: 16px;
+  padding-y: @600 9px 11px;
+
+  font-size: 15px;
+  line-height: normal;
+  background: white;
+  border: 1px solid #e1e1e1;
+  border-right: none @600 1px solid #e1e1e1;
+  border-bottom: @600 none;
+  border-radius: 4px 0 0 4px @600 4px 4px 0 0;
+  transition: 120ms;
+}
+.newsletter__input::placeholder {
+  color: #a1a1a1;
+}
+
+.newsletter__wrap form .button {
+  border-radius: 0 4px 4px 0 @600 0 0 4px 4px;
+  min-height: 40px;
+}

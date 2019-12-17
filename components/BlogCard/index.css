@@ -1,0 +1,159 @@
+.grid-blog {
+  display: grid @800 block;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 25px;
+  margin-bottom: 80px;
+}
+
+.card {
+  background: #ffffff;
+  box-shadow: 0px 25.8192px 34.4257px rgba(0, 0, 0, 0.06);
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  margin-bottom: @800 30px;
+}
+
+.card:hover {
+  box-shadow: 0px 25.8192px 34.4257px rgba(0, 0, 0, 0.12);
+  transform: scale(0.99);
+}
+
+.span4 {
+  grid-column: span 4;
+}
+
+.span6 {
+  grid-column: span 6;
+}
+
+.span12 {
+  grid-column: span 12;
+  height: @500 330px;
+}
+
+.card-img {
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+  object-fit: cover;
+  min-height: 220px;
+  max-height: 220px;
+}
+
+.card-img-big {
+  width: 100%;
+  border-radius: 5px;
+  max-height: 350px;
+  height: @800 100%;
+  object-fit: cover;
+  margin-bottom: -5px;
+}
+
+.card__content {
+  padding: 20px;
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.card__content h3 {
+  margin: 5px 0 0 0;
+  font-size: 21px;
+  line-height: 114%;
+}
+
+.card__content--footer-date {
+  font-size: 15px;
+  line-height: 144%;
+  color: #666;
+}
+
+.card__content--footer-category div p {
+  color: $primary;
+  text-transform: uppercase;
+  margin-top: 5px;
+  font-size: 14px;
+  line-height: 144%;
+  margin-bottom: 0;
+}
+
+.card__content--footer-category div p em {
+  color: #666666;
+  font-style: normal;
+}
+
+.card-left {
+  position: absolute;
+  left: 40px @800 20px;
+  top: 30px @800 20px;
+  width: 35% @800 auto;
+  bottom: 30px @800 20px;
+  right: @800 20px;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 25.8192px 34.4257px rgba(0, 0, 0, 0.06);
+}
+
+.card__content p {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 15px;
+  line-height: 144%;
+  opacity: 0.9;
+}
+
+.max-size {
+  min-height: 100%;
+}
+
+.button-category {
+  display: inline-block;
+  border-radius: 5px;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 5px 13px;
+  font-size: 14px;
+  line-height: 144%;
+  font-weight: bold;
+}
+
+.card a,
+.card a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.button-category-card {
+  display: inline-block;
+  border-radius: 5px;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 5px 13px;
+  font-size: 14px;
+  line-height: 144%;
+  position: absolute;
+  top: -21px;
+  font-weight: bold;
+}
+
+.button-category-card.article,
+.button-category.article {
+  background: #ff4362;
+}
+
+.button-category-card.conseil,
+.button-category.conseil {
+  background: #7673c1;
+}
+
+.button-category-card.interview,
+.button-category.interview {
+  background: #21cdf2;
+}
+
+.button-category-card.tuto,
+.button-category.tuto {
+  background: #ffa12d;
+}

@@ -1,0 +1,11 @@
+.max-width {
+  max-width: $width;
+  margin-x: auto;
+}
+
+@media (max-width: calc($width + 16px * 2)) {
+  .max-width {
+    max-width: 100%;
+    padding-x: 16px;
+  }
+}

@@ -1,0 +1,152 @@
+.button {
+  display: inline-block;
+  min-height: 39px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-x: 16px;
+  overflow: hidden;
+
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 1.2;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+
+  background-color: $primary;
+  border-radius: 4px;
+  cursor: pointer;
+  transition-property: background-color, color;
+  transition-duration: 120ms;
+}
+.button.button--large {
+  min-width: 186px;
+}
+.button.button--medium {
+  min-width: 235px;
+}
+.button.button--extra-large {
+  min-width: 300px @600 240px;
+}
+.button.button--large-touch {
+  padding-top: @600 18px;
+  padding-bottom: @600 23px;
+  font-size: @600 16px;
+}
+
+.button[disabled],
+.button[disabled]:hover,
+.button[disabled]:active {
+  background-color: #cfcfcf;
+  cursor: default;
+}
+
+.button:hover {
+  color: white;
+  background-color: color($primary lightness(+7%));
+  transition-duration: 120ms;
+}
+.button:active {
+  background-color: $primary;
+  transition-duration: 80ms;
+}
+
+.button.button--light-grey {
+  background-color: #f4f5f6;
+  color: #6d6f76;
+}
+.button.button--light-grey:hover {
+  background-color: color(#f4f5f6 blackness(+7%));
+}
+.button.button--light-grey:active {
+  background-color: #f4f5f6;
+}
+
+.button.button--orange {
+  background-color: $orange;
+  color: white;
+}
+.button.button--orange:hover {
+  background-color: color($orange lightness(+7%));
+}
+.button.button--orange:active {
+  background-color: $orange;
+}
+
+.button.button--green {
+  background-color: $green;
+  color: white;
+}
+.button.button--green:hover {
+  background-color: color($green lightness(+7%));
+}
+.button.button--green:active {
+  background-color: $green;
+}
+
+.button.button--yellow {
+  background-color: $yellow;
+  color: white;
+}
+.button.button--yellow:hover {
+  background-color: color($yellow lightness(+7%));
+}
+.button.button--yellow:active {
+  background-color: $yellow;
+}
+
+.button.button--blue {
+  background-color: $blue;
+  color: white;
+}
+.button.button--blue:hover {
+  background-color: color($blue lightness(+7%));
+}
+.button.button--blue:active {
+  background-color: $blue;
+}
+
+.button.button--light-blue {
+  background-color: #e6ecfc;
+  color: $primary;
+}
+.button.button--light-blue:hover {
+  background-color: color(#e6ecfc lightness(+1%));
+}
+.button.button--light-blue:active {
+  background-color: #e6ecfc;
+}
+
+.button.button--transparent,
+.button.button--invisible {
+  background-color: transparent;
+  color: $primary;
+  border: 1px solid $primary;
+}
+.button.button--transparent:hover,
+.button.button--invisible:hover {
+  background-color: $light-primary;
+}
+.button.button--transparent:active,
+.button.button--invisible:active {
+  background-color: color($light-primary saturation(+100%) blackness(+5%));
+}
+
+.button.button--invisible {
+  text-align: @(min-width: 701px) left;
+  border: none;
+}
+
+.button__spinner {
+  position: relative;
+  top: 2px;
+  display: inline-block;
+  height: 14px;
+  overflow: hidden;
+  text-align: right;
+}
+
+.button__spinner svg {
+  position: absolute 0 0 auto auto;
+  height: 100%;
+}

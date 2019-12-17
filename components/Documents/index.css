@@ -1,0 +1,13 @@
+.documents {
+  position: relative;
+  background: white;
+  overflow: hidden;
+  margin-top: 10px;
+  margin-bottom: 100px @800 40px;
+}
+.documents__wrap {
+  display: grid @800 flex;
+  flex-direction: @800 column;
+  grid-template-columns: 272px 1fr @1000 200px 1fr;
+  grid-gap: 68px @1000 28px;
+}

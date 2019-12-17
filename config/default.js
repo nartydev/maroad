@@ -1,0 +1,15 @@
+module.exports = {
+	HOST: null,
+	FORCE_HTTPS: 0,
+
+	SSL_CERTIFICATE_FILE: null,
+	SSL_CERTIFICATE_KEY_FILE: null,
+
+	RECAPTCHA_PUBLIC: null,
+
+	SERVER_HOST: null,
+
+	NOTIFICATION_PREFIX: null,
+
+	CSS_VARIABLES: {}
+};

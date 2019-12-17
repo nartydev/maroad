@@ -1,0 +1,9 @@
+input {
+  border: 1px solid #efefef;
+  font-size: 16px;
+  outline: none;
+  -webkit-appearance: none;
+}
+input:focus {
+  border-color: $focus-color;
+}

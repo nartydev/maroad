@@ -1,0 +1,23 @@
+html,
+body {
+	background: $footer;
+}
+
+body {
+	font-family: sans-serif;
+	font-weight: normal;
+	font-size: 16px;
+}
+.wf-active body {
+	font-family: $font-sans-serif;
+}
+
+::-moz-focus-inner {
+	border: 0;
+}
+
+.title-part-blue > div > p > strong,
+.title-part-blue > div > h1 > strong,
+.title-part-blue > div > h2 > strong {
+	color: $primary;
+}

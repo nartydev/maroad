@@ -1,0 +1,16 @@
+a {
+  color: $primary;
+  outline: none;
+}
+a::-moz-focus-inner {
+  border: none;
+}
+a:hover {
+  color: color($primary lightness(+20%));
+}
+a:focus {
+  box-shadow: 0 0 0 3px $focus-color;
+}
+.js-focus-visible a:focus:not(.focus-visible) {
+  box-shadow: none;
+}

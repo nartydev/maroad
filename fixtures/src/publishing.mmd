@@ -1,0 +1,47 @@
+sequenceDiagram
+  participant Server (Netlify)
+  participant Prismic API
+  participant Google API
+  
+  Note over Server (Netlify),Prismic API: Prismic data fetching
+
+  loop Every API page
+    Server (Netlify)->>Prismic API: Fetch documents
+    Prismic API-->>Server (Netlify): Returns documents
+  end
+
+  loop Every document
+    Server (Netlify)->>Server (Netlify): Normalize data
+
+    loop Every image
+      Server (Netlify)->>Prismic API: Fetch image
+      Prismic API->>Server (Netlify): Returns image
+
+    Server (Netlify)->>Server (Netlify): Save image into /static/prismic/
+    
+    Server (Netlify)->>Server (Netlify): Create size alternatives
+
+    Server (Netlify)->>Server (Netlify): Optimize images using imagemin
+    end
+  end
+
+  Note over Server (Netlify),Google API: Stores opening hours fetching through Google MyBusiness API
+
+  loop Every store
+    Server (Netlify)->>Google API: Fetch data
+    Google API-->>Server (Netlify): Returns data
+  end
+
+  Note over Server (Netlify),Google API: Stores rating score fetching through Google Places API
+
+  loop Every store
+    Server (Netlify)->>Google API: Fetch data
+    Google API-->>Server (Netlify): Returns data
+  end
+
+  Server (Netlify)->>Server (Netlify): Save Prismic and Google data into /data/prismic.json
+  
+  Note over Server (Netlify): Website building
+  Server (Netlify)->>Server (Netlify): Run `next export command`
+  
+  Note over Server (Netlify): Website publishing

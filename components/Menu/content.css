@@ -1,0 +1,33 @@
+.menu > ul {
+  position: absolute 0 0 0 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu > ul > li > a {
+  display: block;
+  padding-y: 14px @(max-height: 500px) 9px;
+  padding-x: 48px 22px;
+  font-size: 25px @(max-height: 500px) 23px;
+
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  transition: 0.12s;
+  -webkit-tap-highlight-color: transparent;
+}
+.menu > ul > li.--active > a {
+  color: black;
+}
+
+.menu > ul > li:not(.--active) > a:hover {
+  color: black;
+}
+
+.menu .lang-switcher {
+  margin-top: 10px;
+  margin-x: 25px;
+}

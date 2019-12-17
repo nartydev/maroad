@@ -1,0 +1,47 @@
+.nav-button {
+  position: absolute 50% auto auto auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  size: 48px;
+
+  border: 1px solid #c3c3c3;
+  background: white;
+  border-radius: 50%;
+  transition-duration: 120ms;
+}
+.nav-button:focus {
+  box-shadow: 0 0 0 2px $focus-color;
+  border-color: $focus-color;
+}
+.js-focus-visible .nav-button:focus:not(.focus-visible) {
+  box-shadow: none;
+  border-color: #c3c3c3;
+}
+
+.nav-button.nav-button--left {
+  left: 0;
+  transform: translateY(-50%) translateX(-50%);
+}
+.nav-button.nav-button--left:hover:not(:active) {
+  transform: translateY(-50%) translateX(-50%) scale(1.05);
+}
+
+.nav-button.nav-button--right {
+  right: 0;
+  transform: translateY(-50%) translateX(50%);
+}
+.nav-button.nav-button--right:hover:not(:active) {
+  transform: translateY(-50%) translateX(50%) scale(1.05);
+}
+
+.nav-button img {
+  height: 14px;
+}
+.nav-button.nav-button--left img {
+  transform: rotate(180deg) translateX(1px);
+}
+.nav-button.nav-button--right img {
+  transform: translateX(1px);
+}

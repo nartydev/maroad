@@ -1,0 +1,16 @@
+.menu__logo {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  padding-top: 50px @(max-height: 500px) 40px;
+  padding-x: 48px 22px;
+  align-items: center;
+  size: 100% auto;
+  text-align: center;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.menu__logo img {
+  height: 22px;
+}

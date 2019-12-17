@@ -1,0 +1,83 @@
+.documents__content {
+  max-width: 700px @800 100%;
+  background: white;
+}
+
+.documents__title {
+  margin-y: 23px 0;
+  font-weight: bold;
+  font-size: 32px @800 26px @600 23px;
+  line-height: 1.4;
+}
+
+.documents__head {
+  padding-y: 9px 11px;
+  padding-x: 13px;
+  margin-y: 35px 10px;
+
+  font-style: normal;
+  font-weight: bold;
+  font-size: 17px;
+  line-height: 1.4;
+  color: $primary;
+
+  background: #e6ecfc;
+  border-radius: 4px;
+}
+.documents__title + div .documents__head {
+  margin-top: 20px;
+}
+
+.documents__content p {
+  margin-y: 20px;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 1.4;
+  color: #000000;
+  text-align: justify;
+}
+
+.documents__content ul li {
+  margin-y: 7px;
+}
+
+.documents__content h2:not(.documents__head) {
+  margin-bottom: 12px;
+  font-weight: bold;
+  font-size: 21px @600 19px;
+  line-height: 1.4;
+}
+.documents__content h2:not(.documents__head) + p {
+  margin-top: 12px;
+}
+
+.documents__content h3 {
+  margin-bottom: 6px;
+  font-size: 18px @600 17px;
+  font-weight: bold;
+}
+.documents__content h3 + p {
+  margin-top: 6px;
+}
+
+.documents__content h4 {
+  margin-bottom: 6px;
+  font-size: 15px;
+  font-weight: bold;
+}
+.documents__content h4 + p {
+  margin-top: 6px;
+}
+
+.documents__content a {
+  color: $primary;
+  text-decoration: none;
+  transition: 0.12s;
+}
+.documents__content a:hover {
+  color: color($primary lightness(+10%));
+  text-decoration: underline;
+}
+.documents__content a:active {
+  color: $primary;
+}

@@ -1,0 +1,46 @@
+@font-face {
+  font-family: 'Moderat';
+  font-display: swap;
+  font-weight: 600;
+  src: url('/static/font/moderat-regular.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Moderat';
+  font-display: swap;
+  font-weight: normal;
+  src: url('/static/font/moderat-medium.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Moderat';
+  font-display: swap;
+  font-weight: bold;
+  src: url('/static/font/moderat-bold.otf') format('truetype');
+}
+/* 
+@font-face {
+  font-family: 'Moderat';
+  font-display: swap;
+  font-weight: 900;
+  src: url('/static/font/NaturatSans-Black.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Moderat';
+  font-display: swap;
+  font-weight: 100;
+  src: url('/static/font/NaturatSans-Thin.otf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Moderat';
+  font-display: swap;
+  font-weight: 200;
+  src: url('/static/font/NaturatSans-Light.otf') format('truetype');
+}
+ */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

@@ -1,0 +1,13 @@
+.container {
+  margin-y: 40px;
+  padding-y: 8px;
+  overflow: hidden;
+  background-color: white;
+}
+.main > .container:first-child {
+  margin-top: 0;
+}
+
+.container.container--grey {
+  background-color: $light-primary;
+}

@@ -1,0 +1,40 @@
+.grid-blog .alert-error {
+  background: rgba(255, 54, 54, 0.2);
+  border-radius: 4px;
+  color: #8a3d3d;
+  text-align: center;
+  padding: 25px 20%;
+  font-size: 15px;
+  line-height: 144%;
+  height: @800 auto;
+}
+
+.grid-blog > h2 {
+  height: @800 auto;
+  margin-bottom: -30px;
+  margin-top: 15px;
+}
+
+.alert-error h2 {
+  font-size: 32px;
+  line-height: 120%;
+  margin-top: 0;
+}
+
+.alert-error > div {
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  cursor: pointer;
+}
+
+.alert-error a,
+.alert-error a:hover {
+  text-decoration: underline;
+  color: inherit;
+}
+
+.alert-error > div > img {
+  margin-right: 4px;
+}
