@@ -1,0 +1,76 @@
+.card-event {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #d6e1eb;
+  border-radius: 4px;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  margin-bottom: 20px;
+}
+
+
+.content-start {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.card-date {
+  font-size: 62px;
+  color: $primary;
+  font-weight: bold;
+
+}
+
+.card-month-hour {
+  font-size: 20px;
+  width: 90px;
+  align-items: center;
+  vertical-align: middle;
+  justify-content: center;
+  display: flex;
+  background: #fff;
+  margin: 5px 20px 5px 0;
+  font-weight: 500;
+  padding: 0 30px 0 20px;
+  border-right: 2px solid #000;
+}
+
+.card-name {
+  font-size: 20px;
+}
+
+.card-place {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.color-green {
+  color: #00D37D;
+}
+
+.card-participants {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+.card-read {
+  border: 1px solid #EF5D36;
+  border-radius: 5px;
+  height: 30px;
+  position: absolute;
+  background: #EF5D36;
+  right: 10px;
+  padding: 0 10px 0 5px;
+  color: #fff;
+  bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+}
+
+.chevron-right {
+  height: 15px;
+}
