@@ -20,7 +20,7 @@
 }
 
 .col-5 {
-  flex: 0.48;
+  flex: 0.49;
 }
 
 .icon-info {
@@ -47,4 +47,78 @@
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 20px;
+}
+
+.box-event__title-princip {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  border-bottom: 1px solid;
+}
+
+.filters {
+  color: #949494;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+
+}
+
+.filters>span {
+  text-transform: initial;
+  color: #000;
+  padding-left: 10px;
+}
+
+.filters>span.active {
+  color: #EF5D36;
+}
+
+.title-box {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.text-sample {
+  line-height: 1.5;
+}
+
+.chevron-black {
+  height: 15px;
+  margin-bottom: -2px;
+}
+
+.back {
+  margin-bottom: 20px;
+}
+
+.content-rules {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content-rules>ul {
+  margin-top: 0;
+  line-height: 1.7;
+  padding-left: 20px;
+}
+
+.button-green {
+  padding: 15px 50px;
+  text-transform: uppercase;
+  font-size: 18px;
+  color: #fff;
+  background: #00D37D;
+  border-radius: 5px;
+  float: right;
+  font-weight: 600;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: .2s ease-in-out;
+}
+
+.button-green:hover {
+  opacity: 0.9;
 }

@@ -1,7 +1,7 @@
 .max-width {
   max-width: 100%;
   margin-x: auto;
-  margin-x: 16px;
+  margin-x: 50px;
 }
 
 @media (max-width: calc($width + 16px * 2)) {

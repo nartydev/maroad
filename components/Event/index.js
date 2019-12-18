@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.css';
 
-const Event = ({ event }) => {
+const Event = ({ event, activeEl, callback }) => {
 	console.log(event.acf.date.split('/'));
 
 	const getMonth = (month) => {
@@ -40,16 +40,31 @@ const Event = ({ event }) => {
 	const hours = event.acf.date.split(' ')[1].replace(':', 'h');
 
 	return (
-		<div className="card-event">
+		<div onClick={() => callback(event)} className={activeEl === event.id ? 'card-event active' : 'card-event'}>
 			<div className="content-start">
-				<div className="card-date">{day}</div>
+				<div
+					className={
+						parseInt(event.acf.participant) === parseInt(event.acf.participation_max) ? (
+							'card-date active'
+						) : (
+							'card-date'
+						)
+					}
+				>
+					{day}
+				</div>
 				<div className="card-month-hour">
 					{month} {hours}
 				</div>
 			</div>
 			<div className="card-border" />
 			<div className="card-global-info">
-				<div className="card-name">{event.acf.title}</div>
+				<div className="card-name">
+					{event.acf.title}{' '}
+					{parseInt(event.acf.participant) === parseInt(event.acf.participation_max) ? (
+						<span className="tag-orange">COMPLET</span>
+					) : null}
+				</div>
 				<div className="card-place">{event.acf.start_place}</div>
 				<div className="card-details" />
 			</div>
@@ -59,10 +74,15 @@ const Event = ({ event }) => {
 				</span>{' '}
 				participants
 			</div>
-			<div className="card-read">
-				<img className="chevron-right" alt="Voir plus" src={require('../../static/chevron-right.svg')} /> En
-				voir plus
-			</div>
+			{activeEl !== event.id ? (
+				<div className="card-read">
+					<img className="chevron-right" alt="Voir plus" src={require('../../static/chevron-right.svg')} /> En
+					voir plus
+				</div>
+			) : null}
+			{parseInt(event.acf.participant) === parseInt(event.acf.participation_max) ? (
+				<div className="coverall" />
+			) : null}
 		</div>
 	);
 };

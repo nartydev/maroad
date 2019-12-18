@@ -90,7 +90,7 @@ const Header = ({ router }) => {
 								</Link>
 							</li>
 							<li>
-								<Link href="/">
+								<Link href="/agenda">
 									<a>Agenda</a>
 								</Link>
 							</li>
