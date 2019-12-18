@@ -1,12 +1,15 @@
 import Link from 'next/link';
 import loadable from '@loadable/component';
 
-import DefaultLayout from '../layouts/default';
+import PageLayout from '../layouts/page.js';
 import HomeTop from '../components/hometop';
 
 const Index = () => {
-	return <HomeTop></HomeTop>;
-	
+	return (
+		<PageLayout structuredData={{ type: 'AboutPage' }}>
+			<HomeTop />
+		</PageLayout>
+	);
 };
 
 export default Index;

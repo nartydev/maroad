@@ -7,10 +7,9 @@ import MaxWidth from '../MaxWidth';
 
 import './index.css';
 
-
 const HomeTop = () => (
 	<div className="hometop">
-		
+		<MaxWidth>GFDSXS</MaxWidth>
 	</div>
 );
 

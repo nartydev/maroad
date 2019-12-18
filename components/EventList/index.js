@@ -34,19 +34,29 @@ const EventList = () => {
 				<div className="col-5">
 					{eventSelect.length !== 0 ? (
 						<div className="box-event">
+							<div className="box-event__title">Ceci est le nom</div>
 							<div className="box-event__info">
 								<span className="info">
-									<img src={require('../../static/calendar.svg')} />
+									<img className="icon-info" src={require('../../static/calendar.svg')} />
 									29 décembre 2019 - 10h30
 								</span>
 								<span className="info">
-									<img src={require('../../static/place.svg')} />
+									<img className="icon-info" src={require('../../static/place.svg')} />
 									27 Bis Rue du Progrès, 93100 Montreuil
 								</span>
 								<span className="info">
-									<img src={require('../../static/users.svg')} />
-									6/ 35
+									<img className="icon-info" src={require('../../static/users.svg')} />
+									6 / 35
 								</span>
+							</div>
+							<div className="box-event__orga">
+								<div className="title-box">Organisateurs: </div>
+							</div>
+							<div className="box-event__orga">
+								<div className="title-box">Messages des organisateurs: </div>
+							</div>
+							<div className="box-event__orga">
+								<div className="title-box">Rappel des consignes: </div>
 							</div>
 						</div>
 					) : null}
