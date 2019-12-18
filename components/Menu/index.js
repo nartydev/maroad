@@ -48,7 +48,28 @@ export default forwardRef(({ open, closing, toggleMenu }, ref) => {
 				</a>
 			</Link>
 
-			<ul />
+			<ul>
+				<li>
+					<Link href="/">
+						<a>Accueil</a>
+					</Link>
+				</li>
+				<li>
+					<Link href="/">
+						<a>Agenda</a>
+					</Link>
+				</li>
+				<li>
+					<Link href="/">
+						<a>Blog</a>
+					</Link>
+				</li>
+				<li>
+					<Link href="/">
+						<a>Qui sommes-nous ?</a>
+					</Link>
+				</li>
+			</ul>
 		</div>
 	);
 });

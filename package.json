@@ -1,9 +1,9 @@
 {
-  "name": "cotenature-com",
+  "name": "maroad-fr",
   "private": true,
   "version": "1.0.0",
-  "description": "Côté Nature website",
-  "author": "Dimitri NICOLAS <dimitri@ooeo.fr>",
+  "description": "Maroad",
+  "author": "Kérian PELAT <kerian.pelat@hetic.net>",
   "license": "MIT",
   "scripts": {
     "build": "node ./scripts/fetch-prismic.js && next build",
@@ -14,11 +14,6 @@
     "dev": "node ./server/dev.js",
     "doc": "mmdc -i ./fixtures/src/publishing.mmd -o ./fixtures/publishing.svg -w 1024"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://bitbucket.org/cotenature/cotenature-com.git"
-  },
-  "homepage": "https://bitbucket.org/cotenature/cotenature-com",
   "dependencies": {
     "@google/maps": "^0.5.5",
     "@kunukn/react-collapse": "^2.2.1",

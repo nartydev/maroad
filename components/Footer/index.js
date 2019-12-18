@@ -46,19 +46,6 @@ const Footer = () => (
 		<div className="footer__legal">
 			<MaxWidth>
 				<div className="footer__legal__wrap">
-					<div className="footer__legal__logo">
-						<Link prefetch href="/" passHref>
-							<a aria-label={`Page d'accueil de ${SITE_NAME}`}>
-								<img
-									src={require('../../static/logo-wave-white.png')}
-									srcSet={require('../../static/logo-wave-white.svg')}
-									title={SITE_NAME}
-									alt={`Logo ${SITE_NAME}`}
-								/>
-							</a>
-						</Link>
-					</div>
-
 					<ul>
 						<li>
 							<Link href="/mentions-legales" passHref>

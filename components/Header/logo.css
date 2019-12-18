@@ -2,12 +2,13 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  flex: 1;
+  flex: 0.4;
   margin: 0;
 
   perspective: 800px;
   perspective-origin: 50% 0;
 }
+
 .header__logo__link {
   display: flex;
   height: 100%;
@@ -17,29 +18,33 @@
   transition-duration: 300ms;
   -webkit-tap-highlight-color: transparent;
 }
+
 .header__logo.header__logo--shop .header__logo__link {
   transform: translateY(-8px);
 }
+
 .header__logo__img {
   user-select: none;
 }
+
 .header__logo__img.header__logo__img--icon {
   width: 50px @800 35px;
   margin-right: 13px @800 10px;
 }
+
 .header__logo__img.header__logo__img--text {
   width: 179px @800 130px;
 }
+
 .header__logo a:focus {
   box-shadow: none;
 }
+
 .header__logo a:focus .header__logo__img.header__logo__img--text {
   outline: 3px solid $focus-color;
   outline-offset: 4px;
 }
-.js-focus-visible
-  .header__logo
-  a:focus:not(.focus-visible)
-  .header__logo__img.header__logo__img--text {
+
+.js-focus-visible .header__logo a:focus:not(.focus-visible) .header__logo__img.header__logo__img--text {
   outline: none;
 }

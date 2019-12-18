@@ -40,49 +40,14 @@ class MyApp extends App {
 		return { pageProps };
 	}
 
-	componentDidMount() {
-		const moderat = new FontFaceObserver('Moderat');
-
-		moderat.load().then(() => {
-			document.documentElement.classList.add('wf-active');
-		});
-
-		/**s
-     * Update overflow color on React app hydratation.
-     */
-		if (updateOverflowColor) {
-			setTimeout(updateOverflowColor, 150);
-			setTimeout(updateOverflowColor, 200);
-			setTimeout(updateOverflowColor, 400);
-			setTimeout(updateOverflowColor, 1000);
-		}
-	}
-
 	render() {
 		const { Component, pageProps } = this.props;
 		return (
 			<Container>
 				<Head>
 					<link
-						rel="preload"
-						href="/static/font/moderat-regular.otf"
-						as="font"
-						type="font/otf"
-						crossOrigin="anonymous"
-					/>
-					<link
-						rel="preload"
-						href="/static/font/moderat-medium.otf"
-						as="font"
-						type="font/otf"
-						crossOrigin="anonymous"
-					/>
-					<link
-						rel="preload"
-						href="/static/font/moderat-bold.otf"
-						as="font"
-						type="font/otf"
-						crossOrigin="anonymous"
+						href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+						rel="stylesheet"
 					/>
 				</Head>
 

@@ -71,7 +71,7 @@
   display: block;
   padding-y: 5px @600 8px;
   padding-right: 16px @600 0;
-  color: #c9d1d4 @600 white;
+  color: #fff @600 white;
   text-decoration: none;
   text-align: @600 left;
 }
@@ -93,7 +93,7 @@
   grid-area: 2 / 1 / 2 / 3;
   text-align: right @900 left;
   margin-left: auto @600 0;
-  color: #c9d1d4;
+  color: #fff;
   line-height: 1.3;
 }
 

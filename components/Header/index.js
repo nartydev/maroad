@@ -78,19 +78,33 @@ const Header = ({ router }) => {
 									title={`Logo ${SITE_NAME}`}
 									alt={`Logo icône de ${SITE_NAME}`}
 								/>
-								<img
-									className="header__logo__img header__logo__img--text"
-									src={require('../../static/logo-text.png')}
-									srcSet={require('../../static/logo-text.svg')}
-									title={SITE_NAME}
-									alt={`Logo textuel de ${SITE_NAME}`}
-								/>
 							</a>
 						</Link>
 					</div>
 
 					<nav className="header__nav">
-						<ul />
+						<ul>
+							<li>
+								<Link href="/">
+									<a>Accueil</a>
+								</Link>
+							</li>
+							<li>
+								<Link href="/">
+									<a>Agenda</a>
+								</Link>
+							</li>
+							<li>
+								<Link href="/">
+									<a>Blog</a>
+								</Link>
+							</li>
+							<li>
+								<Link href="/">
+									<a>Qui sommes-nous ?</a>
+								</Link>
+							</li>
+						</ul>
 					</nav>
 
 					<button
