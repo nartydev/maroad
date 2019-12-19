@@ -90,6 +90,10 @@
   border-bottom: 1px solid;
 }
 
+.container-space {
+  margin-bottom: 30px;
+}
+
 .filters {
   color: #949494;
   font-size: 1rem;

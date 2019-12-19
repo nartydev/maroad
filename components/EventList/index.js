@@ -83,7 +83,7 @@ const EventList = () => {
 	const headers = {
 		headers: {
 			Authorization:
-				'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODg4OFwvd29yZHByZXNzIiwiaWF0IjoxNTc2NzAxMDc5LCJuYmYiOjE1NzY3MDEwNzksImV4cCI6MTU3NzMwNTg3OSwiZGF0YSI6eyJ1c2VyIjp7ImlkIjoiMSJ9fX0.1N-cfyHayY9Jz1xK7AlVvcBHErJms8SJ8J_1S6IykVI'
+				'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvcmFwaGFlbC1wZXJhbHRhLmZyXC9tYXJvYWQiLCJpYXQiOjE1NzY3ODkzNzEsIm5iZiI6MTU3Njc4OTM3MSwiZXhwIjoxNTc3Mzk0MTcxLCJkYXRhIjp7InVzZXIiOnsiaWQiOiIyIn19fQ.aXcb1Mg9Fc0VhJTw3eCKaChEACgehqMH7a8_KEa_Xus'
 		}
 	};
 
