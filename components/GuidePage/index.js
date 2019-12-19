@@ -8,22 +8,22 @@ import './index.css';
 const Guide = () => (
 <div>
     <div className="guide__top">
-        <img src={require("../../static/background_agenda.png")} class="img__top"/>
-        <div class="text__top">
+        <img src={require("../../static/background_agenda.png")} className="img__top"/>
+        <div className="text__top">
             <p>AGIR INDIVIDUELLEMENT C’EST BIEN</p>
-            <p><span class="text__top2">MAIS ENSEMBLE C’EST MIEUX</span></p>
+            <p><span className="text__top2">MAIS ENSEMBLE C’EST MIEUX</span></p>
         </div>
     </div>
     <div className="little__guide">
         <MaxWidth>
-            <h3 className="little__guide-h3">LE PETIT GUIDE DU <span class="color-orange">ROADER</span></h3>
+            <h3 className="little__guide-h3">LE PETIT GUIDE DU <span className="color-orange">ROADER</span></h3>
         </MaxWidth>
-        <div class="little__guide-block">
+        <div className="little__guide-block">
             <h3>Bienvenue sur l’espace du roader</h3>
             <p>Salut Roader, tu trouveras ici toutes les informations nécessaires à tes
 excursions entre amis, cependant si tu as d’autres questions n’hésite pas à
 nous contacter sur les réseaux sociaux.</p>
-            <div class="little__guide-evolution">
+            <div className="little__guide-evolution">
                 <div>
                     <img src={require("../../static/img_guide/guide1.png")} />
                     <div>Prendre conscience</div>
@@ -41,11 +41,11 @@ nous contacter sur les réseaux sociaux.</p>
     </div>
     <div className="change__mentality">
         <MaxWidth>
-            <h3 className="little__guide-h3">COMMENT CHANGER <span class="color-orange">LES MENTALITES</span></h3>
+            <h3 className="little__guide-h3">COMMENT CHANGER <span className="color-orange">LES MENTALITES</span></h3>
         </MaxWidth>
-        <div class="content__mentality">
+        <div className="content__mentality">
             <img src={require("../../static/feuille.png")} />
-            <div class="text">
+            <div className="text">
                 <div>
                     <p>"Le monde de la rue et celui des non sdf n’est pas différents."</p>
                     <p>- Philippe 54 ans, sans abris.</p>
