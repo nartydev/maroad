@@ -7,7 +7,7 @@ const { HOST, SITE_NAME, CSS_VARIABLES } = require('../config');
 const DEFAULT_OPTIONS = {
   title: SITE_NAME,
   description:
-    'Ma-Road est une association et initiative étudiante pour aider les SDF en France. Par la parole et l\'échange, nous voulons rendre leur quotidien meilleur.',
+    "Ma Road est une plateforme qui permet d'organiser facilement des maraudes étudiantes pour aider les sans abris en allant à leur rencontre.",
   type: 'website',
   image: `https://${HOST}/static/seo/og-default.jpg`,
   imageAlt: 'Illustration Ma Road'
