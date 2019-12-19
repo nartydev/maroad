@@ -24,6 +24,11 @@
   font-weight: bold;
 }
 
+.img-responsive {
+  width: 100%;
+  border-radius: 5px;
+}
+
 .header-blog__left--date {
   font-size: 18px;
   line-height: 144%;
@@ -45,7 +50,7 @@
   display: @800 none;
 }
 
-.header-blog__right > img {
+.header-blog__right>img {
   width: 100%;
   max-height: 500px;
   height: 500px;
@@ -75,7 +80,9 @@
   font-size: 23px;
   line-height: 154%;
   font-weight: 900;
-  margin: 25px 0 0 0;
+  margin: 35px 0 20px 0;
+  font-family: "Josefin Sans";
+  text-transform: uppercase;
 }
 
 .blog-content__text {
@@ -182,11 +189,13 @@ h1 {
 }
 
 .share-button-mobile {
-  display: none @800 flex;
+  display: flex;
   width: 190px;
   flex-wrap: wrap;
   justify-content: space-between;
   transition: 0.2s ease-in-out;
+  margin-top: 30px;
+  margin-top: 30px;
 }
 
 .title-share {
@@ -194,10 +203,10 @@ h1 {
   line-height: 144%;
   color: #8b8b8b;
   width: @800 100%;
-  margin-bottom: @800 10px;
+  margin-bottom: 10px;
 }
 
-.share-button > div {
+.share-button>div {
   margin-bottom: 10px;
 }
 
@@ -281,7 +290,7 @@ h1 {
   display: none @800 block;
 }
 
-.mobile-img > img {
+.mobile-img>img {
   width: 100%;
   max-height: 350px;
   height: 350px;
@@ -293,10 +302,8 @@ h1 {
 }
 
 .back {
-  position: absolute;
-  left: 0;
-  top: 0;
   display: @800 none;
+  margin-top: 40px;
 }
 
 .link-back {
@@ -307,13 +314,13 @@ h1 {
   transition: 0.2s ease-in-out;
 }
 
-.link-back > img {
+.link-back>img {
   height: 12px;
   margin-right: 10px;
   transition: 0.2s ease-in-out;
 }
 
-.link-back:hover > img {
+.link-back:hover>img {
   opacity: 0.5;
 }
 

@@ -9,7 +9,7 @@
   height: @800 auto;
 }
 
-.grid-blog > h2 {
+.grid-blog>h2 {
   height: @800 auto;
   margin-bottom: -30px;
   margin-top: 15px;
@@ -21,7 +21,7 @@
   margin-top: 0;
 }
 
-.alert-error > div {
+.alert-error>div {
   margin-top: 15px;
   font-weight: bold;
   font-size: 16px;
@@ -35,6 +35,14 @@
   color: inherit;
 }
 
-.alert-error > div > img {
+.alert-error>div>img {
   margin-right: 4px;
+}
+
+.container-loader {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  height: 50vh;
 }

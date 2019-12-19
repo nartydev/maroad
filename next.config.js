@@ -1,15 +1,18 @@
 require('dotenv-extended').load();
-const withVideos = require('next-videos')
 const withPlugins = require('next-compose-plugins');
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
 const css = require('@zeit/next-css');
 const optimizedImages = require('next-optimized-images');
 const FilterWarningsPlugin = require('webpack-filter-warnings-plugin');
-
+const axios = require('axios');
 const syncRequest = require('sync-request');
 
-module.exports = withVideos()
+const blogs = () => {
+	return JSON.parse(syncRequest('GET', `http://localhost:8888/wordpress/wp-json/wp/v2/posts`).getBody('utf8'));
+};
 
+const dataBlog = blogs();
+console.log(dataBlog);
 
 module.exports = withPlugins(
 	[
@@ -76,7 +79,17 @@ module.exports = withPlugins(
 			return config;
 		},
 		exportPathMap: (defaultExportPathMap) => ({
-			...defaultExportPathMap
+			...defaultExportPathMap,
+			...dataBlog.reduce(
+				(pages, { id }) =>
+					Object.assign({}, pages, {
+						[`/blog/${id}`]: {
+							page: '/blog/[id]',
+							query: { id }
+						}
+					}),
+				{}
+			)
 		})
 	}
 );

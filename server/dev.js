@@ -37,36 +37,42 @@ app
 		server.use(express.json({ extended: false }));
 
 		server.post('/api/sendmail', (req, res) => {
-			console.log(req.body);
+			const { email, name, event } = req.body;
 
 			const request = mailjet.post('send', { version: 'v3.1' }).request({
 				Messages: [
 					{
 						From: {
 							Email: 'narty.dev@gmail.com',
-							Name: 'Me'
+							Name: 'Maroad'
 						},
 						To: [
 							{
-								Email: 'kerian.pelat@hetic.net',
+								Email: `${email}`,
 								Name: 'You'
 							}
 						],
-						Subject: 'My first Mailjet Email!',
-						TextPart: 'Greetings from Mailjet!',
-						HTMLPart:
-							'<h3>Dear passenger 1, welcome to <a href="https://www.mailjet.com/">Mailjet</a>!</h3><br />May the delivery force be with you!'
+						Subject: 'Vous êtes inscrits à une maraude!',
+						TextPart: `${event.acf.title}`,
+						HTMLPart: `<h3>Bonjour ${name}!</h3><br />Vous êtes désormais inscrit à la maraude suivante : <br/> Adresse: ${event
+							.acf.start_place} <br/> Date: ${event.acf
+							.date} <br/><br/> Si vous souhaitez vous désinscrire contactez nous via le formulaire de contact !`
 					}
 				]
 			});
 			request
 				.then((result) => {
 					res.json(result.body);
+					console.log(req.body);
 				})
 				.catch((err) => {
 					console.log(err.statusCode);
 					res.status(500).send('Server error');
 				});
+		});
+
+		server.get('/blog/:id', (req, res) => {
+			app.render(req, res, '/blog/[id]', { id: req.params.id });
 		});
 
 		/** Force HTTPS middleware. */

@@ -209,6 +209,7 @@ const EventList = () => {
 										</span>
 									</div>
 									<div className="box-event__orga">
+										<div className="title-box">Contact: {eventSelect.acf.contact} </div>
 										<div className="title-box">Organisateurs: </div>
 										<div
 											className="text-sample"
@@ -230,8 +231,8 @@ const EventList = () => {
 												<li>Écouter les responsables de l'événement</li>
 											</ul>
 											<ul>
-												<li>Ne soyez pas en retard</li>
-												<li>Écouter les responsables de l'événement</li>
+												<li>Habilliez vous chaudement</li>
+												<li>Ramenez ce que vous souhaitez</li>
 											</ul>
 										</div>
 									</div>

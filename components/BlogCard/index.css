@@ -55,12 +55,12 @@
   min-height: 160px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: start;
   position: relative;
 }
 
 .card__content h3 {
-  margin: 5px 0 0 0;
+  margin: 15px 0 0 0;
   font-size: 21px;
   line-height: 114%;
 }
@@ -140,20 +140,32 @@
 
 .button-category-card.article,
 .button-category.article {
-  background: #ff4362;
+  background: #00D37D;
 }
 
-.button-category-card.conseil,
-.button-category.conseil {
-  background: #7673c1;
+.button-category-card.guide,
+.button-category.guide {
+  background: #00D37D;
 }
 
-.button-category-card.interview,
-.button-category.interview {
-  background: #21cdf2;
+.button-category-card.temoignage,
+.button-category.temoignage {
+  background: #EF5D36;
 }
 
 .button-category-card.tuto,
 .button-category.tuto {
   background: #ffa12d;
+}
+
+.title {
+  font-family: "Josefin Sans";
+  font-size: 24px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-y: 40px 20px;
+}
+
+.color-primary {
+  color: $primary;
 }
