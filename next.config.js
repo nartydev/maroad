@@ -7,7 +7,7 @@ const FilterWarningsPlugin = require('webpack-filter-warnings-plugin');
 const syncRequest = require('sync-request');
 
 const blogs = () => {
-	return JSON.parse(syncRequest('GET', `http://raphael-peralta.fr/maroad/wp-json/wp/v2/posts`).getBody('utf8'));
+	return JSON.parse(syncRequest('GET', `https://raphael-peralta.fr/maroad/wp-json/wp/v2/posts`).getBody('utf8'));
 };
 
 const dataBlog = blogs();

@@ -8,7 +8,7 @@ const BlogSingle = ({ id, pathname }) => {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const result = await axios.get(`http://localhost:8888/wordpress/wp-json/wp/v2/posts/${id}`);
+			const result = await axios.get(`https://raphael-peralta.fr/maroad/wordpress/wp-json/wp/v2/posts/${id}`);
 			setData(result.data);
 		};
 		fetchData();

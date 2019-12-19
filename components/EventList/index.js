@@ -27,7 +27,7 @@ const EventList = () => {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const result = await axios('http://raphael-peralta.fr/maroad/wp-json/acf/v3/maraude');
+			const result = await axios('https://raphael-peralta.fr/maroad/wp-json/acf/v3/maraude');
 			console.log(result.data);
 			setEvents(result.data);
 			setSave(result.data);
