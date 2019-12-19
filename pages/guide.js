@@ -7,9 +7,7 @@ import MaxWidth from '../components/MaxWidth';
 const Guide = () => {
 	return (
 		<PageLayout structuredData={{ type: 'AboutPage' }}>
-			<MaxWidth>
 				<GuidePage />
-			</MaxWidth>
 		</PageLayout>
 	);
 };
