@@ -1,0 +1,35 @@
+.guide__top
+{
+    position: relative;
+}
+
+.img__top 
+{
+    width: 100%;
+    filter: brightness(50%);
+}
+
+.text__top
+{
+    position: absolute;
+    bottom: 6vh;
+    left: 15px;
+    color: white;
+    font-weight: 700;
+    font-size: 4vw;
+}
+.text__top2
+{
+    background-color: #EF5D36;
+}
+.text__top p
+{
+    margin: 0;
+}
+.little__guide-h3 {
+    font-size: 30px;
+    font-weight: 'bold';
+}
+.color-orange{
+    color: #EF5D36;
+}

@@ -7,6 +7,7 @@ const FilterWarningsPlugin = require('webpack-filter-warnings-plugin');
 const axios = require('axios');
 const syncRequest = require('sync-request');
 
+<<<<<<< HEAD
 const blogs = () => {
 	return JSON.parse(syncRequest('GET', `http://localhost:8888/wordpress/wp-json/wp/v2/posts`).getBody('utf8'));
 };
@@ -14,6 +15,8 @@ const blogs = () => {
 const dataBlog = blogs();
 console.log(dataBlog);
 
+=======
+>>>>>>> d0681dd52f7b46d120033e70ab1ecc7daf4d4588
 module.exports = withPlugins(
 	[
 		[

@@ -1,58 +1,253 @@
-.about {
+.about__top 
+{
+  position: relative;
 }
 
-.about__split {
-  display: grid @800 block;
-  grid-template-columns: 42% 1fr;
+.img__top
+{
+  width: 100%;
+  filter: brightness(50%);
+}
+
+.img__top img
+{
+  width: 100%;
+}
+
+.color-orange
+{
+  color: #EF5D36;
+}
+
+.text__top
+{
+  position: absolute;
+  bottom: 6vh @758 4vh;
+  left: 15px;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  z-index: 10;
+}
+
+.text__top p 
+{
+  position: relative;
+  margin-left: 50px;
+  font-weight: 900;
+  color: white;
+  z-index: 10;
+  font-size: 4vw;
+}
+
+.block-orange
+{
+  background: #EF5D36;;
+}
+
+.text__bg-orange
+{
+  width: 768px;
+  height: 63px;
+  left: 59px;
+  top: 487px;
+  background: #EF5D36;
+}
+
+.about__title h2
+{
+  text-transform: uppercase;
+  padding-top: 40px;
+  font-family: Josefin Sans;
+}
+
+.about__data__info
+{
+  display: flex;
+  justify-content: space-around;
   align-items: center;
-  grid-gap: 60px @1000 26px;
-  margin-y: 40px;
-}
-.about__split.about__split--reverse {
-  grid-template-columns: 1fr 42%;
-}
-
-.about__split__img {
-  height: 290px @900 100% @800 200px;
-  margin-bottom: @800 16px;
-}
-.about__split.about__split--reverse .about__split__img {
-  grid-area: 1 / 2 / 1 / 2;
-}
-.about__split__img img {
-  size: 100%;
-  object-fit: cover;
-  overflow: hidden;
-  border-radius: 4px;
+  width: 100%;
+  height: 208px;
+  margin-top: 40px;
+  background: #F7F7F7;
 }
 
-.about__split__content {
+.data__info
+{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-.about__split__content > h1 {
-  margin-y: 0 15px;
-  font-weight: bold;
-  font-size: 42px @800 34px @600 28px;
-  line-height: 1.3;
-}
-.about__split__content .about__split__siege {
-  margin-y: 0 8px;
-  font-weight: bold;
-  font-size: 28px @600 24px;
-  line-height: 36px;
-}
-
-.about__split__content > h2 {
-  margin-y: 8px 24px;
+.data__info p
+{
   font-weight: 500;
-  font-size: 22px @600 19px;
-  line-height: normal;
+  font-size: 20px @768 2vw;
 }
 
-.about__split__content > p {
-  margin-y: 15px;
-  font-weight: normal;
-  font-size: 16px @800 15px;
-  line-height: 1.4;
-  color: #696969;
+.data__info span 
+{
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 70px @768 10vw;
+  color: #EF5D36;
 }
+
+.about__team__arbo
+{
+  display: flex;
+  justify-content: center;
+  flex-direction: @768 column;
+  width: 100%;
+  margin-top: 70px;
+}
+
+.team__market
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 115px @1000 0px;
+}
+
+.team__produit
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 115px @1000 0px;
+}
+
+.team__design
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-right: 115px @1000 0px;
+}
+
+.team__dev
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.team__portrait
+{
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.team__portrait p 
+{
+  font-weight: bold;
+}
+
+.person__img
+{
+  width: 140px;
+  height: 140px;
+}
+
+.about__goals
+{
+  position: relative;
+  height: 50vh @768 auto;
+  background: #F7F7F7;
+  padding-left: 50px @768 24px;
+  text-align: @768 center;
+}
+
+.about__goals__info
+{
+  display: flex;
+  justify-content: space-around @768 center;
+  flex-direction: @768 column;
+  align-items: center;
+  text-align: center;
+}
+
+.goals__info__card
+{
+  width: 320px;
+  height: 282px;
+  background: #fff;
+  margin-bottom: @768 32px; 
+}
+
+.goals__info__card h3
+{
+  padding-top: 20px;
+}
+
+.goals__info__card p
+{
+  padding: 0px 35px 35px 35px;
+}
+
+.about__join
+{
+  width: 100%;
+  position: relative;
+  display: @1000 none; 
+}
+
+.about__join img
+{
+  width: 100%;
+}
+
+.img__bottom
+{
+  width: 100%;
+  filter: brightness(50%);
+}
+
+.text__bottom
+{
+  position: absolute;
+  margin-left: auto;
+  margin-right:auto;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  width: 30vw @1284 70vw;
+  bottom: 14vh @1440 8vh;
+  text-align: center;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px @768 2vw;
+  color: white;
+}
+
+.text__bottom h2
+{
+  font-family: Josefin Sans;
+  font-style: normal;
+  font-weight: bold;
+  color: #F08264;
+  z-index: 10;
+  text-transform: uppercase;
+}
+
+.join__button 
+{
+  width: 20vw;
+  height: 55px;
+  font-size:16px;
+  background: #EF5D36;
+  border: 1px solid #CD441F;
+  box-sizing: border-box;
+  border-radius: 5px;
+  margin-top: 45px;
+}
+
+

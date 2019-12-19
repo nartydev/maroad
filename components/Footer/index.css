@@ -1,6 +1,5 @@
 .footer {
   background: white;
-  padding-top: 50px;
 }
 
 .footer__wrap {
@@ -61,6 +60,9 @@
 
 .footer__legal ul {
   display: flex @600 grid;
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 0 16px;
   list-style: none;

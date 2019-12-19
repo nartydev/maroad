@@ -35,31 +35,44 @@ const SOCIAL_IMAGES = {
 
 const Footer = () => (
 	<footer className="footer">
-		<div className="footer__wrap">
-			<MaxWidth>
-				<div className="footer__content">
-					<ul className="footer__table" />
-				</div>
-			</MaxWidth>
-		</div>
 
 		<div className="footer__legal">
 			<MaxWidth>
 				<div className="footer__legal__wrap">
 					<ul>
 						<li>
-							<Link href="/mentions-legales" passHref>
-								<a>Mentions légales</a>
+							<h3>Nous contacter</h3>
+							<p>Téléphone: +61(0) 383 766 284</p>
+							<p>E-mail: machin@lorem.com</p>
+						</li>
+						<li>
+							<h3>Nous trouver</h3>
+							<p>HETIC</p>
+							<p>27 Bis rue du progrès</p>
+							<p>France, Montreuil,  93100</p>
+						</li>
+						<li>
+							<h3>Accès rapide</h3>
+							<Link href="/agenda" passHref>
+								<a>Agenda</a>
+							</Link>
+							<Link href="/ressources" passHref>
+								<a>Ressources</a>
+							</Link>
+							<Link href="/about" passHref>
+								<a>Qui sommes-nous</a>
 							</Link>
 						</li>
 						<li>
-							<Link href="/politique-de-confidentialite" passHref>
-								<a>Confidentialité</a>
+							<h3>Réseaux sociaux</h3>
+							<Link href="/" passHref>
+								<a>Facebook</a>
 							</Link>
-						</li>
-						<li>
-							<Link href="/politique-echange-remboursement" passHref>
-								<a>Politique d'échange et de remboursement</a>
+							<Link href="/" passHref>
+								<a>Instagram</a>
+							</Link>
+							<Link href="/" passHref>
+								<a>Linkedin</a>
 							</Link>
 						</li>
 						{/* <li>
