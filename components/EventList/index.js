@@ -90,7 +90,7 @@ const EventList = () => {
 	const sendForm = async () => {
 		await axios
 			.post(
-				'http://localhost:8888/wordpress/wp-json/wp/v2/subscriptions',
+				'https://raphael-peralta.fr/maroad/wp-json/wp/v2/subscriptions',
 				{
 					title: eventSelect.acf.title,
 					status: 'publish',
@@ -106,7 +106,7 @@ const EventList = () => {
 			.then((response) => {
 				axios
 					.post(
-						`http://localhost:8888/wordpress/wp-json/wp/v2/maraude/${eventSelect.id}`,
+						`https://raphael-peralta.fr/maroad/wp-json/wp/v2/maraude/${eventSelect.id}`,
 						{
 							fields: {
 								participant: parseInt(eventSelect.acf.participant) + 1
@@ -124,7 +124,8 @@ const EventList = () => {
               setLoaded(false)
               setSuccess(true)
             }).catch((error) => {
-              console.error(error)
+              setLoaded(false)
+              setError("Erreur lors de l'envoie du mail ! ")
             })
 					})
 					.catch((error) => {

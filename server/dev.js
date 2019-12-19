@@ -55,8 +55,8 @@ app
 						Subject: 'Vous êtes inscrits à une maraude!',
 						TextPart: `${event.acf.title}`,
 						HTMLPart: `<h3>Bonjour ${name}!</h3><br />Vous êtes désormais inscrit à la maraude suivante : <br/> Adresse: ${event
-							.acf.start_place} <br/> Date: ${event.acf
-							.date} <br/><br/> Si vous souhaitez vous désinscrire contactez nous via le formulaire de contact !`
+							.acf.start_place} <br/> Date: ${event.acf.date}<br/> Contact de l'événement: ${event.acf
+							.contact} <br/><br/> Si vous souhaitez vous désinscrire contactez nous via le formulaire de contact !`
 					}
 				]
 			});
