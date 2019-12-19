@@ -9,7 +9,7 @@
     "preexport": "rimraf ./out",
     "export": "next export",
     "build": "next build",
-    "start": "node ./server/index.js",
+    "start": "node ./server/dev.js",
     "deploy": "npm run build && npm run export",
     "postexport": "rimraf ./public && mv ./out ./public",
     "dev": "node ./server/dev.js",
