@@ -13,10 +13,13 @@ const notify = require('./helpers/notify');
 
 const { FORCE_HTTPS, SSL_CERTIFICATE_FILE, SSL_CERTIFICATE_KEY_FILE } = require('../config');
 
-// savePrismicData().then(() => {});
+const mailjet = require('node-mailjet').connect(
+	process.env.MAILJET_API_KEY_PUBLIC,
+	process.env.MAILJET_API_KEY_PRIVATE
+);
 
 const app = next({
-	dev: true,
+	dev: process.env.NODE_ENV === 'development',
 	dir: path.resolve(__dirname, '..')
 });
 const handler = app.getRequestHandler();
@@ -29,6 +32,42 @@ app
 		const server = express();
 
 		server.enable('trust proxy');
+
+		// Init middleware
+		server.use(express.json({ extended: false }));
+
+		server.post('/api/sendmail', (req, res) => {
+			console.log(req.body);
+
+			const request = mailjet.post('send', { version: 'v3.1' }).request({
+				Messages: [
+					{
+						From: {
+							Email: 'narty.dev@gmail.com',
+							Name: 'Me'
+						},
+						To: [
+							{
+								Email: 'kerian.pelat@hetic.net',
+								Name: 'You'
+							}
+						],
+						Subject: 'My first Mailjet Email!',
+						TextPart: 'Greetings from Mailjet!',
+						HTMLPart:
+							'<h3>Dear passenger 1, welcome to <a href="https://www.mailjet.com/">Mailjet</a>!</h3><br />May the delivery force be with you!'
+					}
+				]
+			});
+			request
+				.then((result) => {
+					res.json(result.body);
+				})
+				.catch((err) => {
+					console.log(err.statusCode);
+					res.status(500).send('Server error');
+				});
+		});
 
 		/** Force HTTPS middleware. */
 		server.get('*', (req, res, next) => {

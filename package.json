@@ -6,7 +6,7 @@
   "author": "Kérian PELAT <kerian.pelat@hetic.net>",
   "license": "MIT",
   "scripts": {
-    "build": "node ./scripts/fetch-prismic.js && next build",
+    "build": "next build",
     "preexport": "rimraf ./out",
     "export": "next export",
     "postexport": "rimraf ./public && mv ./out ./public",
@@ -55,6 +55,7 @@
     "next": "^9.0.3",
     "next-compose-plugins": "^2.2.0",
     "next-optimized-images": "^2.5.3",
+    "node-mailjet": "^3.3.1",
     "nprogress": "^0.2.0",
     "overflow-color": "^2.3.0",
     "photoswipe": "^4.1.3",

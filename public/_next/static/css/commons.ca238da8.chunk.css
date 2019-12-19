@@ -1,0 +1,2 @@
+.main{overflow:hidden;background:#fff}
+.max-width{max-width:100%;margin-left:50px;margin-right:50px}@media (max-width:calc(1135px + 16px * 2)){.max-width{max-width:100%;padding-left:16px;padding-right:16px}}

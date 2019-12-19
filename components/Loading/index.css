@@ -1,0 +1,7 @@
+.container-loader {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  height: 50vh;
+}

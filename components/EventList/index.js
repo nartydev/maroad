@@ -4,6 +4,7 @@ import './index.css';
 
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Event from '../Event';
+import Spinner from 'react-svg-spinner';
 
 const EventList = () => {
 	const [ save, setSave ] = useState([]);
@@ -15,6 +16,15 @@ const EventList = () => {
 	const [ email, setEmail ] = useState('');
 	const [ name, setName ] = useState('');
 
+	const [ loaded, setLoaded ] = useState(false);
+	const [ success, setSuccess ] = useState(false);
+	const [ error, setError ] = useState('');
+
+	const [ day, setDay ] = useState('');
+	const [ month, setMonth ] = useState('');
+	const [ year, setYear ] = useState('');
+	const [ hours, setHours ] = useState('');
+
 	useEffect(() => {
 		const fetchData = async () => {
 			const result = await axios('http://localhost:8888/wordpress/wp-json/acf/v3/maraude');
@@ -22,15 +32,109 @@ const EventList = () => {
 			setEvents(result.data);
 			setSave(result.data);
 			setEventSelect(result.data[0]);
+			setDay(result.data[0].acf.date.split('/')[0]);
+			setMonth(getMonth(result.data[0].acf.date.split('/')[1]));
+			setYear(result.data[0].acf.date.split('/')[2].split(' ')[0]);
+			setHours(result.data[0].acf.date.split(' ')[1].replace(':', 'h'));
 		};
 		fetchData();
 	}, []);
 
 	const callback = (event) => {
 		setEventSelect(event);
+		setDay(event.acf.date.split('/')[0]);
+		setMonth(getMonth(event.acf.date.split('/')[1]));
+		setYear(event.acf.date.split('/')[2].split(' ')[0]);
+		setHours(event.acf.date.split(' ')[1].replace(':', 'h'));
+    setShowPopup(false);
+    setSuccess(false)
 	};
 
-	const handleChange = (key, value) => {};
+	const getMonth = (month) => {
+		const monthInt = parseInt(month);
+		switch (monthInt) {
+			case 1:
+				return 'janvier';
+			case 2:
+				return 'février';
+			case 3:
+				return 'mars';
+			case 4:
+				return 'avril';
+			case 5:
+				return 'mai';
+			case 6:
+				return 'juin';
+			case 7:
+				return 'juillet';
+			case 8:
+				return 'août';
+			case 9:
+				return 'septembre';
+			case 10:
+				return 'octobre';
+			case 11:
+				return 'novembree';
+			case 12:
+				return 'décembre';
+		}
+	};
+
+	const headers = {
+		headers: {
+			Authorization:
+				'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODg4OFwvd29yZHByZXNzIiwiaWF0IjoxNTc2NzAxMDc5LCJuYmYiOjE1NzY3MDEwNzksImV4cCI6MTU3NzMwNTg3OSwiZGF0YSI6eyJ1c2VyIjp7ImlkIjoiMSJ9fX0.1N-cfyHayY9Jz1xK7AlVvcBHErJms8SJ8J_1S6IykVI'
+		}
+	};
+
+	const sendForm = async () => {
+		await axios
+			.post(
+				'http://localhost:8888/wordpress/wp-json/wp/v2/subscriptions',
+				{
+					title: eventSelect.acf.title,
+					status: 'publish',
+					fields: {
+						nom: name,
+						email,
+						id_maraude: eventSelect.id,
+						titre: eventSelect.acf.title
+					}
+				},
+				headers
+			)
+			.then((response) => {
+				axios
+					.post(
+						`http://localhost:8888/wordpress/wp-json/wp/v2/maraude/${eventSelect.id}`,
+						{
+							fields: {
+								participant: parseInt(eventSelect.acf.participant) + 1
+							}
+						},
+						headers
+					)
+					.then((response) => {
+            axios.post('/api/sendmail', {
+              event: eventSelect,
+              name: name,
+              email: email
+            }).then((response) => {
+              console.log('success', response);
+              setLoaded(false)
+              setSuccess(true)
+            }).catch((error) => {
+              console.error(error)
+            })
+					})
+					.catch((error) => {
+						console.error('erreurr:', error);
+					});
+			})
+			.catch((error) => {
+				console.error('erreur :', error);
+			});
+	};
 
 	const filterCallback = (idFilter) => {
 		// 0 = Tous
@@ -44,11 +148,22 @@ const EventList = () => {
 				break;
 		}
 		setActiveFilter(idFilter);
-	};
+  };
+  
+  const validateEmail = (email) => {
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  } 
 
 	const formData = (e) => {
-		e.preventDefault();
-		console.log(email, name);
+    e.preventDefault();
+    if(validateEmail(email) && name.length !== 0) {
+      sendForm();
+      setLoaded(true)
+      setError('')
+    } else {
+      setError("L'adresse email n'est pas correct!");
+    }
 	};
 
 	return (
@@ -66,111 +181,160 @@ const EventList = () => {
 				</span>{' '}
 			</div>
 			<div className="container-space">
-				<div className="col-5">
-					{events.map((event) => {
-						return <Event key={event.id} callback={callback} activeEl={eventSelect.id} event={event} />;
-					})}
-				</div>
-				<div className="col-5">
-					{eventSelect.length !== 0 ? !showPopup ? (
-						<div className="box-event">
-							<div className="box-event__title">{eventSelect.acf.title}</div>
-							<div className="box-event__info">
-								<span className="info">
-									<img className="icon-info" src={require('../../static/calendar.svg')} />
-									29 décembre 2019 - 10h30
-								</span>
-								<span className="info">
-									<img className="icon-info" src={require('../../static/place.svg')} />
-									{eventSelect.acf.start_place}
-								</span>
-								<span className="info">
-									<img className="icon-info" src={require('../../static/users.svg')} />
-									{eventSelect.acf.participant} / {eventSelect.acf.participation_max}
-								</span>
-							</div>
-							<div className="box-event__orga">
-								<div className="title-box">Organisateurs: </div>
-								<div
-									className="text-sample"
-									dangerouslySetInnerHTML={{ __html: eventSelect.acf.organisateurs }}
-								/>
-							</div>
-							<div className="box-event__orga">
-								<div className="title-box">Messages des organisateurs: </div>
-								<div
-									className="text-sample"
-									dangerouslySetInnerHTML={{ __html: eventSelect.acf.description }}
-								/>
-							</div>
-							<div className="box-event__orga">
-								<div className="title-box">Rappel des consignes: </div>
-								<div className="content-rules">
-									<ul>
-										<li>Ne soyez pas en retard</li>
-										<li>Écouter les responsables de l'événement</li>
-									</ul>
-									<ul>
-										<li>Ne soyez pas en retard</li>
-										<li>Écouter les responsables de l'événement</li>
-									</ul>
-								</div>
-							</div>
-							<div onClick={() => setShowPopup(true)} className="button-green">
-								Je m'inscris
-							</div>
+				{events.length !== 0 && eventSelect.length !== 0 ? (
+					<>
+						<div className="col-5">
+							{events.map((event) => {
+								return (
+									<Event key={event.id} callback={callback} activeEl={eventSelect.id} event={event} />
+								);
+							})}
 						</div>
-					) : (
-						<div className="box-event">
-							<div className="back" onClick={() => setShowPopup(false)}>
-								<img
-									className="chevron-black"
-									alt="Voir plus"
-									src={require('../../static/chevron-right2.svg')}
-								/>Retour
-							</div>
-							<div className="box-event__title-princip color-primary">Inscription</div>
-							<div className="box-event__title">{eventSelect.acf.title}</div>
-							<div className="box-event__info">
-								<span className="info">
-									<img className="icon-info" src={require('../../static/calendar.svg')} />
-									29 décembre 2019 - 10h30
-								</span>
-								<span className="info">
-									<img className="icon-info" src={require('../../static/place.svg')} />
-									{eventSelect.acf.start_place}
-								</span>
-								<span className="info">
-									<img className="icon-info" src={require('../../static/users.svg')} />
-									{eventSelect.acf.participant} / {eventSelect.acf.participation_max}
-								</span>
-							</div>
-							<div className="ruler" />
+						<div className="col-5">
+							{eventSelect.length !== 0 ? !showPopup ? (
+								<div className="box-event">
+									<div className="box-event__title">{eventSelect.acf.title}</div>
+									<div className="box-event__info">
+										<span className="info">
+											<img className="icon-info" src={require('../../static/calendar.svg')} />
+											{day} {month} {year} - {hours}
+										</span>
+										<span className="info">
+											<img className="icon-info" src={require('../../static/place.svg')} />
+											{eventSelect.acf.start_place}
+										</span>
+										<span className="info">
+											<img className="icon-info" src={require('../../static/users.svg')} />
+											{eventSelect.acf.participant} / {eventSelect.acf.participation_max}
+										</span>
+									</div>
+									<div className="box-event__orga">
+										<div className="title-box">Organisateurs: </div>
+										<div
+											className="text-sample"
+											dangerouslySetInnerHTML={{ __html: eventSelect.acf.organisateurs }}
+										/>
+									</div>
+									<div className="box-event__orga">
+										<div className="title-box">Messages des organisateurs: </div>
+										<div
+											className="text-sample"
+											dangerouslySetInnerHTML={{ __html: eventSelect.acf.description }}
+										/>
+									</div>
+									<div className="box-event__orga">
+										<div className="title-box">Rappel des consignes: </div>
+										<div className="content-rules">
+											<ul>
+												<li>Ne soyez pas en retard</li>
+												<li>Écouter les responsables de l'événement</li>
+											</ul>
+											<ul>
+												<li>Ne soyez pas en retard</li>
+												<li>Écouter les responsables de l'événement</li>
+											</ul>
+										</div>
+									</div>
+									{eventSelect.acf.participant !== eventSelect.acf.participation_max ? (
+										<div onClick={() => setShowPopup(true)} className="button-green">
+											Je m'inscris
+										</div>
+									) : null}
+								</div>
+							) : (
+								<div className="box-event active">
+									<div className="back" onClick={() => setShowPopup(false)}>
+										<img
+											className="chevron-black"
+											alt="Voir plus"
+											src={require('../../static/chevron-right2.svg')}
+										/>Retour
+									</div>
+									<div className="box-event__title-princip color-primary">Inscription</div>
+									<div className="box-event__title">{eventSelect.acf.title}</div>
+									<div className="box-event__info">
+										<span className="info">
+											<img className="icon-info" src={require('../../static/calendar.svg')} />
+											{day} {month} {year} - {hours}
+										</span>
+										<span className="info">
+											<img className="icon-info" src={require('../../static/place.svg')} />
+											{eventSelect.acf.start_place}
+										</span>
+										<span className="info">
+											<img className="icon-info" src={require('../../static/users.svg')} />
+											{eventSelect.acf.participant} / {eventSelect.acf.participation_max}
+										</span>
+									</div>
+									<div className="ruler" />
+									{loaded ? (
+										<div className="container-loader">
+											<Spinner thickness={3} color="#ef5c35" size="64px" />
+										</div>
+									) : success ? (
+										<div>
+											Félicitation vous êtes désormais inscrit à la maraude ! Vous recevrez un
+											mail avec toutes les informations nécessaires !
+										</div>
+									) : (
+										<form onSubmit={formData}>
+                      {
+                        error !== '' ? (
+                          <div className="alert-error">
+                            <img src={require('../../static/alert-circle.svg')} /> {error}
+                          </div>
+                        ) : null
+                      }
+											<div className="group-input">
+												<label>
+													Nom <span className="color-red">*</span>:
+												</label>
+												<input
+													onChange={(e) => setName(e.target.value)}
+													name="nom"
+													type="text"
+													required
+												/>
+											</div>
+											<div className="group-input">
+												<label>
+													Email <span className="color-red">*</span>:
+												</label>
+												<input
+													onChange={(e) => setEmail(e.target.value)}
+													name="email"
+													type="email"
+													required
+												/>
+											</div>
 
-							<form onSubmit={formData}>
-								<div className="group-input">
-									<label>Nom *</label>
-									<input onChange={(e) => setName(e.target.value)} name="nom" type="text" />
-								</div>
-								<div className="group-input">
-									<label>Email *</label>
-									<input onChange={(e) => setEmail(e.target.value)} name="email" type="email" />
-								</div>
+											<div className="alert">
+												<img src={require('../../static/alert-circle.svg')} />
+												En vous inscrivant vous consentez à respecter l’ensemble des consignes
+											</div>
 
-								<div className="group-input">
-									<input value="Confirmer l'inscription" className="green-button" type="submit" />
+											<div className="group-input">
+												<input
+													value="Confirmer l'inscription"
+													className="button-green"
+													type="submit"
+												/>
+											</div>
+											<div className="clear" />
+										</form>
+									)}
 								</div>
-							</form>
+							) : null}
 						</div>
-					) : null}
-				</div>
+					</>
+				) : (
+					<div className="container-loader">
+						<Spinner thickness={3} color="#ef5c35" size="64px" />
+					</div>
+				)}
 			</div>
 		</div>
 	);
-};
-
-const FormEvent = () => {
-	return <div className="form-event">d</div>;
 };
 
 export default EventList;

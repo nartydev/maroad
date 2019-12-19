@@ -17,6 +17,15 @@
 .container-space {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+}
+
+.container-loader {
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  height: 50vh;
 }
 
 .col-5 {
@@ -41,12 +50,37 @@
 .box-event__info {
   display: flex;
   justify-content: flex-start;
+  flex-wrap: wrap;
+  line-height: 1.6;
 }
 
 .box-event__title {
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 20px;
+}
+
+.box-event.active {
+  padding: 30px;
+  background: #f9f9f9;
+  border-radius: 4px;
+}
+
+.clear {
+  clear: both;
+}
+
+.alert {
+  border-radius: 5px;
+  padding: 10px;
+  background: #ef5c35;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.alert>img {
+  margin-right: 10px;
 }
 
 .box-event__title-princip {
@@ -67,11 +101,19 @@
 .filters>span {
   text-transform: initial;
   color: #000;
+  cursor: pointer;
   padding-left: 10px;
 }
 
 .filters>span.active {
   color: #EF5D36;
+}
+
+.alert-error {
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  background: #EA0000;
 }
 
 .title-box {
@@ -121,4 +163,33 @@
 
 .button-green:hover {
   opacity: 0.9;
+}
+
+.ruler {
+  margin: 20px 0;
+  height: 1px;
+  width: 100%;
+  background: #ccc;
+}
+
+.group-input {
+  margin: 20px 0;
+}
+
+.group-input>input[type="text"],
+.group-input>input[type="email"] {
+  height: auto;
+  padding: 10px 10px;
+  font-size: 16px;
+  line-height: normal;
+  background: #fff;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.color-red {
+  color: red;
 }
