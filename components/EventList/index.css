@@ -118,6 +118,11 @@
   padding: 5px;
   border-radius: 4px;
   background: #EA0000;
+  display: flex;
+}
+
+.alert-error>img {
+  margin-right: 10px;
 }
 
 .title-box {

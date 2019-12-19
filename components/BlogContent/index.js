@@ -58,7 +58,7 @@ const BlogContent = ({ data, pathname }) => {
 			<MaxWidth id="rela">
 				<div className={`min-content `}>
 					<Link href="/blog">
-						<div className="back">
+						<div className="back active">
 							<a className="link-back" title="Retour en arrière">
 								<img src={require('../../static/chevron-right2.svg')} />
 								Retour au blog

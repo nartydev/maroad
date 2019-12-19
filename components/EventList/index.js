@@ -115,7 +115,7 @@ const EventList = () => {
 						headers
 					)
 					.then((response) => {
-            axios.post('/api/sendmail', {
+            axios.post('https://maroad.herokuapp.com/api/sendmail', {
               event: eventSelect,
               name: name,
               email: email

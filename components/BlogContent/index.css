@@ -301,7 +301,7 @@ h1 {
   position: relative;
 }
 
-.back {
+.back.active {
   display: @800 none;
   margin-top: 40px;
 }
