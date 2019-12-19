@@ -55,6 +55,7 @@
     "next": "^9.0.3",
     "next-compose-plugins": "^2.2.0",
     "next-optimized-images": "^2.5.3",
+    "next-videos": "^1.1.2",
     "nprogress": "^0.2.0",
     "overflow-color": "^2.3.0",
     "photoswipe": "^4.1.3",
