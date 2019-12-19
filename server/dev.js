@@ -75,12 +75,16 @@ app
 			app.render(req, res, '/blog/[id]', { id: req.params.id });
 		});
 
+		server.get('*', (req, res) => handler(req, res));
+
+		/** Serving HTTP Application. */
 		http.createServer(server).listen(process.env.PORT, (error) => {
 			if (!error) {
 				console.log(`HTTP listening on port ${process.env.PORT}.`);
 			} else {
 				const message = `Error while trying to listen on port ${process.env.PORT}.`;
 				console.error(red(message));
+				notify(message, NotificationType.Error);
 			}
 		});
 	})
