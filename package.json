@@ -6,11 +6,12 @@
   "author": "Kérian PELAT <kerian.pelat@hetic.net>",
   "license": "MIT",
   "scripts": {
-    "build": "next build",
     "preexport": "rimraf ./out",
     "export": "next export",
-    "postexport": "rimraf ./public && mv ./out ./public",
+    "build": "next build",
+    "start": "node ./server/index.js",
     "deploy": "npm run build && npm run export",
+    "postexport": "rimraf ./public && mv ./out ./public",
     "dev": "node ./server/dev.js",
     "doc": "mmdc -i ./fixtures/src/publishing.mmd -o ./fixtures/publishing.svg -w 1024"
   },
