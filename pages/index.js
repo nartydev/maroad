@@ -1,8 +1,9 @@
+import PageLayout from '../layouts/page.js';
+import HomeTop from '../components/HomeTop/index.js';
+
 import Link from 'next/link';
 import loadable from '@loadable/component';
 
-import PageLayout from '../layouts/page.js';
-import HomeTop from '../components/hometop';
 
 const Index = () => {
 	return (
