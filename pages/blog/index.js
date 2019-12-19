@@ -13,7 +13,7 @@ const Blog = () => {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const result = await axios('http://localhost:8888/wordpress/wp-json/wp/v2/posts');
+			const result = await axios('http://raphael-peralta.fr/maroad/wp-json/wp/v2/posts');
 			console.log(result.data);
 			setData(result.data);
 		};

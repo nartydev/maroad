@@ -8,7 +8,7 @@ const axios = require('axios');
 const syncRequest = require('sync-request');
 
 const blogs = () => {
-	return JSON.parse(syncRequest('GET', `http://localhost:8888/wordpress/wp-json/wp/v2/posts`).getBody('utf8'));
+	return JSON.parse(syncRequest('GET', `http://raphael-peralta.fr/maroad/wp-json/wp/v2/posts`).getBody('utf8'));
 };
 
 const dataBlog = blogs();
