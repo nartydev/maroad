@@ -95,12 +95,12 @@ const Header = ({ router }) => {
 								</Link>
 							</li>
 							<li>
-								<Link href="/">
+								<Link href="/blog">
 									<a>Blog</a>
 								</Link>
 							</li>
 							<li>
-								<Link href="/">
+								<Link href="/about">
 									<a>Qui sommes-nous ?</a>
 								</Link>
 							</li>

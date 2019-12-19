@@ -1,58 +1,125 @@
-.about {
+.about__top 
+{
+  width: 100%;
+  height: 520px;
 }
 
-.about__split {
-  display: grid @800 block;
-  grid-template-columns: 42% 1fr;
-  align-items: center;
-  grid-gap: 60px @1000 26px;
-  margin-y: 40px;
-}
-.about__split.about__split--reverse {
-  grid-template-columns: 1fr 42%;
-}
-
-.about__split__img {
-  height: 290px @900 100% @800 200px;
-  margin-bottom: @800 16px;
-}
-.about__split.about__split--reverse .about__split__img {
-  grid-area: 1 / 2 / 1 / 2;
-}
-.about__split__img img {
-  size: 100%;
-  object-fit: cover;
+.img__top
+{
+  width: 100%;
   overflow: hidden;
-  border-radius: 4px;
+  z-index: 10;
 }
 
-.about__split__content {
+.img__bg-img 
+{
+  position: absolute;
+  background: #000;
+  opacity: 0.4;
+  z-index: 5;
+  width: 100%;
+  height: 520px;
 }
 
-.about__split__content > h1 {
-  margin-y: 0 15px;
-  font-weight: bold;
-  font-size: 42px @800 34px @600 28px;
-  line-height: 1.3;
-}
-.about__split__content .about__split__siege {
-  margin-y: 0 8px;
-  font-weight: bold;
-  font-size: 28px @600 24px;
-  line-height: 36px;
-}
-
-.about__split__content > h2 {
-  margin-y: 8px 24px;
-  font-weight: 500;
-  font-size: 22px @600 19px;
-  line-height: normal;
+.text__top
+{
+  position: absolute;
+  text-transform: uppercase;
+  width: 853px;
+  height: 63px;
+  left: 64px;
+  top: 424px;
+  z-index: 10;
+  margin-top: -35px;
 }
 
-.about__split__content > p {
-  margin-y: 15px;
-  font-weight: normal;
-  font-size: 16px @800 15px;
-  line-height: 1.4;
-  color: #696969;
+.text__top p 
+{
+  font-weight: 900;
+  font-size: 54px;
+  color: white;
 }
+
+.block-orange
+{
+  background: #EF5D36;;
+}
+
+.text__bg-orange
+{
+  width: 768px;
+  height: 63px;
+  left: 59px;
+  top: 487px;
+  background: #EF5D36;
+}
+
+.about__title h2
+{
+  text-transform: uppercase;
+}
+
+.about__data__info
+{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 208px;
+  background: #F7F7F7;
+}
+
+.data__info
+{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about__team__arbo
+{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.team__market
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.team__produit
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.team__design
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.team__dev
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.person__img
+{
+  width: 140px;
+  height: 140px;
+}
+
+

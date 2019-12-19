@@ -1,5 +1,4 @@
 require('dotenv-extended').load();
-const withVideos = require('next-videos')
 const withPlugins = require('next-compose-plugins');
 const withBundleAnalyzer = require('@zeit/next-bundle-analyzer');
 const css = require('@zeit/next-css');
@@ -7,9 +6,6 @@ const optimizedImages = require('next-optimized-images');
 const FilterWarningsPlugin = require('webpack-filter-warnings-plugin');
 
 const syncRequest = require('sync-request');
-
-module.exports = withVideos()
-
 
 module.exports = withPlugins(
 	[

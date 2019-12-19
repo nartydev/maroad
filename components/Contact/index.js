@@ -3,11 +3,6 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import axios from 'axios';
 import { RichText } from 'prismic-reactjs';
 
-import { shops, getShop } from '../../helpers/stores';
-import useFavoriteShop from '../../helpers/use-favorite-shop';
-import { richText } from '../../helpers/rich-text';
-import { linkResolver } from '../../helpers/link-resolver';
-
 import Button from '../Button';
 import MaxWidth from '../MaxWidth';
 import Form, { FormLine } from '../Form';
