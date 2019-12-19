@@ -115,11 +115,13 @@ const EventList = () => {
 						headers
 					)
 					.then((response) => {
-            axios.post('https://maroad.herokuapp.com/api/sendmail', {
+            axios.post('/api/sendmail', {
               event: eventSelect,
               name: name,
               email: email
-            }).then((response) => {
+            }, { headers: {
+              'Content-Type': 'application/json'
+            } }).then((response) => {
               console.log('success', response);
               setLoaded(false)
               setSuccess(true)

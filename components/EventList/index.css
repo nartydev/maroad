@@ -115,10 +115,11 @@
 
 .alert-error {
   color: #fff;
-  padding: 5px;
+  padding: 10px;
   border-radius: 4px;
   background: #EA0000;
   display: flex;
+  align-items: center;
 }
 
 .alert-error>img {
