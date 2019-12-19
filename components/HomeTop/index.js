@@ -82,16 +82,18 @@ const HomeTop = () => (
 					<p>Je suis un titre d’article.</p>
 				</div>
 				<div>
-					<div><img src={require("../../static/min/article2.png")}/></div>
-					<h3 class="title_home-4">ARTICLES</h3>
-					<p>Je suis un titre d’article.</p>
-				</div>
-				<div>
-					<div class="interarticle_home-4">
-						<h3>DÉCOUVREZ<br />
-						<span class="min_span_home-4">DE NOUVEAUX</span><br />
-						<span>ARTICLES</span></h3>
-						<div class="cta_home-4">EN SAVOIR PLUS</div>				
+					<div>
+						<div><img src={require("../../static/min/article2.png")}/></div>
+						<h3 class="title_home-4">ARTICLES</h3>
+						<p>Je suis un titre d’article.</p>
+					</div>
+					<div>
+						<div class="interarticle_home-4">
+							<h3>DÉCOUVREZ<br />
+							<span class="min_span_home-4">DE NOUVEAUX</span><br />
+							<span>ARTICLES</span></h3>
+							<div class="cta_home-4">EN SAVOIR PLUS</div>				
+						</div>
 					</div>
 				</div>
 			</div>
