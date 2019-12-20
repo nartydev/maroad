@@ -90,7 +90,7 @@ const HomeTop = () => {
 												<span className="color-orange">SOMMES-NOUS ?</span>
 											</p>
 										</a>
-									</Link>:
+									</Link>
 								</div>
 								<hr />
 								<div>
