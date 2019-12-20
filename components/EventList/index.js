@@ -74,7 +74,7 @@ const EventList = () => {
 	const callbackByID = (id, coords) => {
 		setshowPopupMap(true);
 		setZoomParis([ 13 ]);
-		setCenterParis(coords.coord);
+		setCenterParis(coords);
 		setEventSelect(events[id]);
 		setDay(events[id].acf.date.split('/')[0]);
 		setMonth(getMonth(events[id].acf.date.split('/')[1]));
@@ -485,12 +485,12 @@ const EventList = () => {
 						<Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
 							<Feature coordinates={[ 48.8534, 2.349014 ]} />
 						</Layer>
-						{coords.map((coord, key) => (
+						{events.map((coord, key) => (
 							<Marker
 								key={key}
 								className="marker"
-								onClick={() => callbackByID(key, coord)}
-								coordinates={coord.coord}
+								onClick={() => callbackByID(key, [ coord.acf.longitude, coord.acf.latitude ])}
+								coordinates={[ coord.acf.longitude, coord.acf.latitude ]}
 							>
 								{' '}
 							</Marker>
