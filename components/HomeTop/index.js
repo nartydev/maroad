@@ -129,7 +129,7 @@ const HomeTop = () => {
 				<MaxWidth>
 					<div className="partners_home-3">
 						<img src={require('../../static/partners/logo-hetic-horizontal.png')} />
-						<img src={require('../../static/partners/logo-hetic-horizontal.png')} />
+						<img src={require('../../static/log-hfg.png')} />
 					</div>
 				</MaxWidth>
 			</div>
@@ -170,7 +170,11 @@ const HomeTop = () => {
 											<br />
 											<span>ARTICLES</span>
 										</h3>
-										<div className="cta_home-4">EN SAVOIR PLUS</div>
+										<div className="cta_home-4">
+											<Link href="/blog">
+												<a className="none-href">EN SAVOIR PLUS</a>
+											</Link>
+										</div>
 									</div>
 								</div>
 							</div>
