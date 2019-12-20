@@ -197,10 +197,11 @@ hr {
 
 .content-cards-event {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr @800 1fr;
   column-gap: 21px;
   margin-top: 40px;
 }
+
 
 .mt {
   margin-top: 50px;
@@ -209,6 +210,7 @@ hr {
 .home-4 {
   background: #F7F7F7;
   padding-bottom: 70px;
+  display: @800 none;
 }
 
 .home-4 h2 {
