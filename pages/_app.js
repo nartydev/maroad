@@ -49,6 +49,7 @@ class MyApp extends App {
 						href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
 						rel="stylesheet"
 					/>
+          <link href='https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
 					<link
 						href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400,600,700&display=swap"
 						rel="stylesheet"

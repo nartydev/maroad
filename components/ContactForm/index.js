@@ -25,7 +25,7 @@ const ContactForm = () => {
 				</div>
 			</div>
 			<div className="col-5">
-				<form>
+				<form className="form">
 					<div className="group-input">
 						<label>
 							Nom <span className="color-red">*</span>:
