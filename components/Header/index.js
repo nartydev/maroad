@@ -14,7 +14,7 @@ import './logo.css';
 import './nav.css';
 import './menu.css';
 
-const Header = ({ router }) => {
+const Header = ({ href, router }) => {
 	const menuRef = useRef(null);
 
 	const [ closing, setClosing ] = useState(false);
@@ -63,7 +63,7 @@ const Header = ({ router }) => {
 	}, []);
 
 	const [ headerLogoClassName, setHeaderLogoClassName ] = useState('header__logo');
-
+	console.log(href, router.asPath.replace(/\/$/, ''));
 	return (
 		<header className="header">
 			<MaxWidth>

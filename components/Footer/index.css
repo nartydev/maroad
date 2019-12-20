@@ -20,7 +20,7 @@
 
 .footer__legal__wrap {
   display: flex @900 block @600 grid;
-  grid-template-columns: 50px 1fr;
+  grid-template-columns: @600 1fr;
   grid-gap: 0 26px;
   align-items: center @600 flex-start;
   padding-y: 16px 24px @600 12px 32px;
@@ -65,8 +65,13 @@
   width: 70%;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 0 16px;
+  grid-template-columns: @600 1fr;
   list-style: none;
   padding: 0;
+}
+
+.footer__legal li {
+  text-align: @600 left;
 }
 
 .footer__legal li a {

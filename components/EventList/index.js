@@ -5,6 +5,7 @@ import './index.css';
 import { useState, useEffect, useRef, useCallback } from 'react';
 import Event from '../Event';
 import Spinner from 'react-svg-spinner';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 
 const EventList = () => {
 	const [ save, setSave ] = useState([]);
@@ -188,14 +189,26 @@ const EventList = () => {
 					<>
 						<div className="col-5">
 							{events.map((event) => {
-								return (
-									<Event key={event.id} callback={callback} activeEl={eventSelect.id} event={event} />
+                if(window.innerWidth < 800) {
+                  return (
+                    <AnchorLink
+                    offset="30"
+                    className="none"
+                    href="#anchor"
+                    >
+									    <Event key={event.id} callback={callback} activeEl={eventSelect.id} event={event} />
+                    </AnchorLink>
 								);
+              } else {
+                return (
+                  <Event key={event.id} callback={callback} activeEl={eventSelect.id} event={event} />
+                  )
+              }
 							})}
 						</div>
 						<div className="col-5">
 							{eventSelect.length !== 0 ? !showPopup ? (
-								<div className="box-event">
+								<div className="box-event" id="anchor">
 									<div className="box-event__title">{eventSelect.acf.title}</div>
 									<div className="box-event__info">
 										<span className="info">

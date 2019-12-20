@@ -1,26 +1,21 @@
-.about__top 
-{
+.about__top {
   position: relative;
 }
 
-.img__top
-{
+.img__top {
   width: 100%;
   filter: brightness(50%);
 }
 
-.img__top img
-{
+.img__top img {
   width: 100%;
 }
 
-.color-orange
-{
+.color-orange {
   color: #EF5D36;
 }
 
-.text__top
-{
+.text__top {
   position: absolute;
   bottom: 6vh @758 4vh;
   left: 15px;
@@ -30,8 +25,8 @@
   z-index: 10;
 }
 
-.text__top p 
-{
+
+.text__top p {
   position: relative;
   margin-left: 50px;
   font-weight: 900;
@@ -40,13 +35,12 @@
   font-size: 4vw;
 }
 
-.block-orange
-{
-  background: #EF5D36;;
+.block-orange {
+  background: #EF5D36;
+  ;
 }
 
-.text__bg-orange
-{
+.text__bg-orange {
   width: 768px;
   height: 63px;
   left: 59px;
@@ -54,15 +48,13 @@
   background: #EF5D36;
 }
 
-.about__title h2
-{
+.about__title h2 {
   text-transform: uppercase;
   padding-top: 40px;
   font-family: Josefin Sans;
 }
 
-.about__data__info
-{
+.about__data__info {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -72,22 +64,19 @@
   background: #F7F7F7;
 }
 
-.data__info
-{
+.data__info {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
 
-.data__info p
-{
+.data__info p {
   font-weight: 500;
   font-size: 20px @768 2vw;
 }
 
-.data__info span 
-{
+.data__info span {
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
@@ -95,8 +84,7 @@
   color: #EF5D36;
 }
 
-.about__team__arbo
-{
+.about__team__arbo {
   display: flex;
   justify-content: center;
   flex-direction: @768 column;
@@ -104,8 +92,7 @@
   margin-top: 70px;
 }
 
-.team__market
-{
+.team__market {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -113,8 +100,7 @@
   margin-right: 115px @1000 0px;
 }
 
-.team__produit
-{
+.team__produit {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -122,8 +108,7 @@
   margin-right: 115px @1000 0px;
 }
 
-.team__design
-{
+.team__design {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -131,33 +116,28 @@
   margin-right: 115px @1000 0px;
 }
 
-.team__dev
-{
+.team__dev {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-.team__portrait
-{
+.team__portrait {
   margin-bottom: 30px;
   text-align: center;
 }
 
-.team__portrait p 
-{
+.team__portrait p {
   font-weight: bold;
 }
 
-.person__img
-{
+.person__img {
   width: 140px;
   height: 140px;
 }
 
-.about__goals
-{
+.about__goals {
   position: relative;
   height: 50vh @768 auto;
   background: #F7F7F7;
@@ -165,8 +145,7 @@
   text-align: @768 center;
 }
 
-.about__goals__info
-{
+.about__goals__info {
   display: flex;
   justify-content: space-around @768 center;
   flex-direction: @768 column;
@@ -174,47 +153,40 @@
   text-align: center;
 }
 
-.goals__info__card
-{
+.goals__info__card {
   width: 320px;
   height: 282px;
   background: #fff;
-  margin-bottom: @768 32px; 
+  margin-bottom: @768 32px;
 }
 
-.goals__info__card h3
-{
+.goals__info__card h3 {
   padding-top: 20px;
 }
 
-.goals__info__card p
-{
+.goals__info__card p {
   padding: 0px 35px 35px 35px;
 }
 
-.about__join
-{
+.about__join {
   width: 100%;
   position: relative;
-  display: @1000 none; 
+  display: @1000 none;
 }
 
-.about__join img
-{
+.about__join img {
   width: 100%;
 }
 
-.img__bottom
-{
+.img__bottom {
   width: 100%;
   filter: brightness(50%);
 }
 
-.text__bottom
-{
+.text__bottom {
   position: absolute;
   margin-left: auto;
-  margin-right:auto;
+  margin-right: auto;
   left: 0;
   right: 0;
   z-index: 100;
@@ -228,8 +200,7 @@
   color: white;
 }
 
-.text__bottom h2
-{
+.text__bottom h2 {
   font-family: Josefin Sans;
   font-style: normal;
   font-weight: bold;
@@ -238,11 +209,10 @@
   text-transform: uppercase;
 }
 
-.join__button 
-{
+.join__button {
   width: 20vw;
   height: 55px;
-  font-size:16px;
+  font-size: 16px;
   background: #EF5D36;
   border: 1px solid #CD441F;
   box-sizing: border-box;
@@ -251,3 +221,6 @@
 }
 
 
+.team__produit {
+  justify-content: flex-start;
+}

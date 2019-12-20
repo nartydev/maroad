@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './index.css';
 
-const Event = ({ event, activeEl, callback }) => {
+const Event = ({ event, active, activeEl, callback }) => {
 	console.log(event.acf.date.split('/'));
 
 	const getMonth = (month) => {

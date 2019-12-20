@@ -12,6 +12,10 @@
   list-style: none;
 }
 
+.header__nav ul li.active {
+  color: #CCC;
+}
+
 .header__nav__item {
   display: flex;
   align-items: center;
