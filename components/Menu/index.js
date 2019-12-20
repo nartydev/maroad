@@ -55,18 +55,23 @@ export default forwardRef(({ open, closing, toggleMenu }, ref) => {
 					</Link>
 				</li>
 				<li>
-					<Link href="/">
+					<Link href="/agenda">
 						<a>Agenda</a>
 					</Link>
 				</li>
 				<li>
-					<Link href="/">
+					<Link href="/blog">
 						<a>Blog</a>
 					</Link>
 				</li>
 				<li>
-					<Link href="/">
+					<Link href="/about">
 						<a>Qui sommes-nous ?</a>
+					</Link>
+				</li>
+				<li>
+					<Link href="/contact">
+						<a>Contact</a>
 					</Link>
 				</li>
 			</ul>

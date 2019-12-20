@@ -112,9 +112,7 @@ const HomeTop = () => {
 											<p>DÉCOUVRIR</p>
 											<p>
 												LE GUIDE<br />
-												<span className="color-orange" s>
-													DU MARAUDEUR
-												</span>
+												<span className="color-orange">DU MARAUDEUR</span>
 											</p>
 										</a>
 									</Link>
