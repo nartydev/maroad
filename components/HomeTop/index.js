@@ -82,30 +82,42 @@ const HomeTop = () => {
 							</div>
 							<div className="nav_home-2">
 								<div>
-									<p>DÉCOUVRIR</p>
-									<p>
-										QUI<br />
-										<span className="color-orange">SOMMES-NOUS ?</span>
-									</p>
+									<Link href="/about">
+										<a className="none-inherit">
+											<p>DÉCOUVRIR</p>
+											<p>
+												QUI<br />
+												<span className="color-orange">SOMMES-NOUS ?</span>
+											</p>
+										</a>
+									</Link>:
 								</div>
 								<hr />
 								<div>
-									<p>DÉCOUVRIR</p>
-									<p>
-										LES<br />
-										<span className="color-orange">TÉMOIGNAGES</span>
-									</p>
+									<Link href="/blog">
+										<a className="none-inherit">
+											<p>DÉCOUVRIR</p>
+											<p>
+												LES<br />
+												<span className="color-orange">TÉMOIGNAGES</span>
+											</p>
+										</a>
+									</Link>
 								</div>
 								<hr />
 
 								<div>
-									<p>DÉCOUVRIR</p>
-									<p>
-										LE GUIDE<br />
-										<span className="color-orange" s>
-											DU MARAUDEUR
-										</span>
-									</p>
+									<Link href="/guide">
+										<a className="none-inherit">
+											<p>DÉCOUVRIR</p>
+											<p>
+												LE GUIDE<br />
+												<span className="color-orange" s>
+													DU MARAUDEUR
+												</span>
+											</p>
+										</a>
+									</Link>
 								</div>
 							</div>
 						</div>

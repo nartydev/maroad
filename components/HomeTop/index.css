@@ -249,6 +249,11 @@ hr {
   width: 46% @800 100%;
 }
 
+.none-inherit {
+  text-decoration: none;
+  color: inherit;
+}
+
 .mt-25 {
   margin-top: 25px;
 }

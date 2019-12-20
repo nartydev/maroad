@@ -38,15 +38,6 @@ const EventList = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			let result = await axios('https://raphael-peralta.fr/maroad/wp-json/acf/v3/maraude');
-
-			await result.data.map((event) => {
-				axios(
-					`https://api.mapbox.com/geocoding/v5/mapbox.places/${event.acf
-						.start_place}.json?access_token=pk.eyJ1Ijoia2VyaWFucCIsImEiOiJjanIzb3RjYjQwZHBiNDlxb244bmhmMWttIn0.OOdv7-Uvd5NnModocJk0Bw`
-				).then((response) => {
-					console.log(response.data.features[0].center);
-				});
-			});
 			setEvents(result.data);
 			setSave(result.data);
 			setEventSelect(result.data[0]);
@@ -58,8 +49,6 @@ const EventList = () => {
 
 		fetchData();
 	}, []);
-
-	const coords = [ { coord: [ 2.33, 48.88 ] }, { coord: [ 2.315537, 48.827158 ] }, { coord: [ 2.42, 48.85 ] } ];
 
 	const callback = (event) => {
 		setEventSelect(event);
@@ -253,7 +242,7 @@ const EventList = () => {
 	};
 
 	const Map = ReactMapboxGl({
-		accessToken: 'pk.eyJ1Ijoia2VyaWFucCIsImEiOiJjanIzb3RjYjQwZHBiNDlxb244bmhmMWttIn0.OOdv7-Uvd5NnModocJk0Bw'
+		accessToken: 'pk.eyJ1Ijoia2VyaWFucCIsImEiOiJjazRka3MwenkwM3NvM21sOWhsb3VmMjQ4In0.VNH7fRRjpJUgbbo-VJmu2Q'
 	});
 
 	return (
