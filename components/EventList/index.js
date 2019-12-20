@@ -38,6 +38,7 @@ const EventList = () => {
 	useEffect(() => {
 		const fetchData = async () => {
 			let result = await axios('https://raphael-peralta.fr/maroad/wp-json/acf/v3/maraude');
+
 			setEvents(result.data);
 			setSave(result.data);
 			setEventSelect(result.data[0]);
@@ -242,7 +243,7 @@ const EventList = () => {
 	};
 
 	const Map = ReactMapboxGl({
-		accessToken: 'pk.eyJ1Ijoia2VyaWFucCIsImEiOiJjazRka3MwenkwM3NvM21sOWhsb3VmMjQ4In0.VNH7fRRjpJUgbbo-VJmu2Q'
+		accessToken: 'pk.eyJ1IjoibmFydHlkZXYiLCJhIjoiY2s0ZGx6d2ZwMDQzYjNubzNjZDhlZjRoayJ9.EZW8_DnlY7-8KU2pZu3sWw'
 	});
 
 	return (

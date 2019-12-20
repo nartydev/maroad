@@ -1,0 +1,99 @@
+.green-color {
+  color: #00D37D;
+  padding-right: 10px;
+}
+
+.list {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.list>img {
+  margin-right: 10px;
+}
+
+.title {
+  font-family: "Josefin Sans";
+  font-size: 24px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-y: 40px 20px;
+}
+
+.color-primary {
+  color: $primary;
+}
+
+form {
+  margin-top: 80px;
+}
+
+.space-between {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 0;
+  flex-wrap: wrap;
+}
+
+.space-between .col-5>p {
+  margin-bottom: 70px;
+}
+
+.space-between .col-5 {
+  min-width: @800 100%;
+}
+
+.group-input {
+  margin: 20px 0;
+}
+
+.group-input>input[type="text"],
+.group-input>input[type="email"] {
+  height: auto;
+  padding: 10px 10px;
+  font-size: 16px;
+  line-height: normal;
+  background: #fff;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+}
+
+textarea {
+  height: 150px;
+  padding: 10px 10px;
+  font-size: 16px;
+  line-height: normal;
+  background: #fff;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+}
+
+
+.button-green {
+  padding: 15px 50px;
+  text-transform: uppercase;
+  font-size: 18px;
+  color: #fff;
+  background: #00D37D;
+  border-radius: 5px;
+  float: right;
+  font-weight: 600;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: .2s ease-in-out;
+}
+
+.color-red {
+  color: red;
+}
+
+.col-5 {
+  flex: 0.40
+}
