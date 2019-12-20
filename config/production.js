@@ -1,5 +1,5 @@
 module.exports = {
-	HOST: 'maroad.fr',
+	HOST: 'maroad.herokuapp.com',
 
 	/**
    * If all HTTP GET requests
