@@ -34,8 +34,8 @@ const HomeTop = () => {
 					<p className="word2_home-1">LES ETUDIANTS SE MOBILISENT</p>
 					<p className="word3_home-1">SENSIBILISATION | RENCONTRE | ASISTANCE</p>
 					<div className="cta_home-1">
-						<Link className="none" href="/agenda">
-							PARTICIPER A UNE MARAUDE
+						<Link href="/agenda">
+							<a className="none">PARTICIPER A UNE MARAUDE</a>
 						</Link>
 					</div>
 				</div>
